@@ -1,0 +1,53 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  port: 8080
+
+
+spring:
+  profiles:
+    active: dev
+
+  thymeleaf:
+    cache: false
+    servlet:
+      content-type: text/html
+    enabled: true
+    encoding: UTF-8
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: LEGACYHTML5
+
+  mvc:
+    static-path-pattern: /static/**
+  resources:
+    static-locations: classpath:/static/
+
+#mybatis配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.dus.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
+# mapper
+mapper:
+  mappers: tk.mybatis.mapper.common.Mapper
+  not-empty: false
+  identity: MYSQL
+
+# pageHelper
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+debug: false
+
+#logging:
+#  pattern:
+#    console: "%-5level %logger{50} - %msg%n"
+#  register-shutdown-hook: false
+#  level:
+#    root: info

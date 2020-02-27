@@ -1,0 +1,18 @@
+spring:
+
+  datasource:
+#    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name:  com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://39.105.130.213:3306/dus?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone = GMT
+    username: root
+    password: java202@pigxTalent
+
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 25
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: ExpendHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: select 1
