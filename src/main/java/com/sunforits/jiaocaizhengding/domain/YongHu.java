@@ -43,13 +43,5 @@ public class YongHu implements Serializable{
         this.shenfen = shenfen;
     }
 
-    @Override
-    public String toString() {
-        return "YongHu{" +
-                "name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                ", number=" + number +
-                ", shenfen='" + shenfen + '\'' +
-                '}';
-    }
+
 }
