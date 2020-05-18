@@ -14,7 +14,7 @@ import java.util.List;
 @Repository
 public interface BookDao  {
 
-    @Insert("insert into book (name,chubanshe,money) values (#{name},#{chubanshe},#{money})")
+    @Insert("insert into book (name,chubanshe,money,zuozhe) values (#{name},#{chubanshe},#{money},#{zuozhe})")
     public void saveBook(Book book);
 
     @Delete("delete from book where name = #{name} ")

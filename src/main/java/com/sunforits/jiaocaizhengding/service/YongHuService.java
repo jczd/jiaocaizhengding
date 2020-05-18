@@ -13,7 +13,7 @@ import java.util.List;
 
 public interface YongHuService {
 
-    public YongHu tDengLu(String name);
+    public YongHu DengLu(String name);
 
     public void saveYongHu(YongHu yongHu);
 
@@ -22,4 +22,6 @@ public interface YongHuService {
     public YongHu findByNP(YongHu yongHu);
 
     public List<YongHu> findAll();
+
+
 }

@@ -10,6 +10,7 @@ public class YongHu implements Serializable{
     private String password;
     private Integer number;
     private String shenfen;
+    private String xueyuan;
 
     public String getName() {
         return name;
@@ -43,5 +44,22 @@ public class YongHu implements Serializable{
         this.shenfen = shenfen;
     }
 
+    public String getXueyuan() {
+        return xueyuan;
+    }
 
+    public void setXueyuan(String xueyuan) {
+        this.xueyuan = xueyuan;
+    }
+
+    @Override
+    public String toString() {
+        return "YongHu{" +
+                "name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", number=" + number +
+                ", shenfen='" + shenfen + '\'' +
+                ", xueyuan='" + xueyuan + '\'' +
+                '}';
+    }
 }

@@ -16,9 +16,9 @@ import java.util.List;
 public interface YongHuDao {
 
     @Select("select * from yonghu where name = #{name}")
-    public YongHu tDengLu(String name);
+    public YongHu DengLu(String name);
 
-    @Insert("insert into yonghu (name,password,number,shenfen) values (#{name},#{password},#{number},#{shenfen})")
+    @Insert("insert into yonghu (name,password,number,shenfen,xueyuan) values (#{name},#{password},#{number},#{shenfen},#{xueyuan})")
     public void saveYongHu(YongHu yongHu);
 
     @Delete("delete from yonghu where id = #{id} ")

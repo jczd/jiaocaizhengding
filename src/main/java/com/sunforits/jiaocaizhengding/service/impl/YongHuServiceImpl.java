@@ -17,13 +17,16 @@ public class YongHuServiceImpl implements YongHuService {
 
     @Autowired
     YongHuDao yongHuDao;
+
     @Override
-    public YongHu tDengLu(String name) {
-        return yongHuDao.tDengLu(name);
+    public YongHu DengLu(String name) {
+        return yongHuDao.DengLu(name);
     }
 
     @Override
     public void saveYongHu(YongHu yongHu) {
+
+
         yongHuDao.saveYongHu(yongHu);
     }
 
@@ -43,4 +46,6 @@ public class YongHuServiceImpl implements YongHuService {
         List<YongHu> all = yongHuDao.findAll();
         return all;
     }
+
+
 }

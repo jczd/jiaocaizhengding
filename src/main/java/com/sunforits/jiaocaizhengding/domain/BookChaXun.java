@@ -3,14 +3,15 @@ package com.sunforits.jiaocaizhengding.domain;
 import java.io.Serializable;
 
 /**
- * @date 2020/5/11-12:07
+ * @date 2020/5/18-12:44
  */
-public class Book implements Serializable{
+public class BookChaXun implements Serializable {
 
     private String name;
-    private String chubanshe;
-    private Integer money;
+    private String  chubanshe;
     private String  zuozhe;
+    private int shuliang;
+    private String  teacher;
 
     public String getName() {
         return name;
@@ -28,14 +29,6 @@ public class Book implements Serializable{
         this.chubanshe = chubanshe;
     }
 
-    public Integer getMoney() {
-        return money;
-    }
-
-    public void setMoney(Integer money) {
-        this.money = money;
-    }
-
     public String getZuozhe() {
         return zuozhe;
     }
@@ -44,13 +37,30 @@ public class Book implements Serializable{
         this.zuozhe = zuozhe;
     }
 
+    public int getShuliang() {
+        return shuliang;
+    }
+
+    public void setShuliang(int shuliang) {
+        this.shuliang = shuliang;
+    }
+
+    public String getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(String teacher) {
+        this.teacher = teacher;
+    }
+
     @Override
     public String toString() {
-        return "Book{" +
+        return "BookChaXun{" +
                 "name='" + name + '\'' +
                 ", chubanshe='" + chubanshe + '\'' +
-                ", money=" + money +
                 ", zuozhe='" + zuozhe + '\'' +
+                ", shuliang=" + shuliang +
+                ", teacher='" + teacher + '\'' +
                 '}';
     }
 }
