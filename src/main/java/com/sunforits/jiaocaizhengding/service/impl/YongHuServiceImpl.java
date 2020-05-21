@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @date 2020/5/11-11:18
  */
-@Service("yongHuservice")
+@Service
 public class YongHuServiceImpl implements YongHuService {
 
     @Autowired

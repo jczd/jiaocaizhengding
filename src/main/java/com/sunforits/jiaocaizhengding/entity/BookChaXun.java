@@ -9,11 +9,9 @@ import java.io.Serializable;
  */
 @Data
 public class BookChaXun implements Serializable {
-
     private String name;
     private String chubanshe;
     private String zuozhe;
     private int shuliang;
     private String teacher;
-
 }

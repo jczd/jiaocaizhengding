@@ -14,6 +14,4 @@ public class TeacherChaXun implements Serializable {
     private String xueyuan;
     private String book;
     private String shuliang;
-
-
 }

@@ -9,10 +9,8 @@ import java.io.Serializable;
  */
 @Data
 public class Book implements Serializable {
-
     private String name;
     private String chubanshe;
     private Integer money;
     private String zuozhe;
-
 }
