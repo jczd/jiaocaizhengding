@@ -1,7 +1,7 @@
 package com.sunforits.jiaocaizhengding.service.impl;
 
 import com.sunforits.jiaocaizhengding.dao.AllBookDao;
-import com.sunforits.jiaocaizhengding.domain.allBook;
+import com.sunforits.jiaocaizhengding.entity.allBook;
 import com.sunforits.jiaocaizhengding.service.AllBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

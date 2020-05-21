@@ -1,10 +1,9 @@
 package com.sunforits.jiaocaizhengding.controller;
 
-import com.sunforits.jiaocaizhengding.domain.Book;
-import com.sunforits.jiaocaizhengding.domain.allBook;
+import com.sunforits.jiaocaizhengding.entity.Book;
+import com.sunforits.jiaocaizhengding.entity.allBook;
 import com.sunforits.jiaocaizhengding.service.AllBookService;
 import com.sunforits.jiaocaizhengding.service.BookService;
-import com.sunforits.jiaocaizhengding.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

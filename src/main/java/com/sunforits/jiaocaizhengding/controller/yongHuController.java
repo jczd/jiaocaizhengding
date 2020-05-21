@@ -1,23 +1,27 @@
 package com.sunforits.jiaocaizhengding.controller;
 
-import com.sunforits.jiaocaizhengding.dao.TeacherDao;
-import com.sunforits.jiaocaizhengding.domain.Teacher;
-import com.sunforits.jiaocaizhengding.domain.YongHu;
+import com.sunforits.jiaocaizhengding.entity.Teacher;
+import com.sunforits.jiaocaizhengding.entity.YongHu;
 import com.sunforits.jiaocaizhengding.service.TeacherService;
 import com.sunforits.jiaocaizhengding.service.YongHuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 用户注册登录管理
  */
-@Controller
-@RequestMapping("/yongHu")
+@RestController
+@RequestMapping("/yonghu")
 public class yongHuController {
 
     @Autowired
@@ -25,38 +29,42 @@ public class yongHuController {
 
     @Autowired
     private TeacherService teacherService;
+
+    Map<String, Object> map = new HashMap<>();
+
     /**
      * 登录案例
      *
      * @return
      */
-    @RequestMapping("/denglu")
-    public String denglu(YongHu yongHu, Model model) {
+    @GetMapping("/denglu")
+    public Map<String, Object> denglu(YongHu yongHu) {
+        map.clear();
+        System.out.println(yongHu);
 
-        String s=yongHu.getName();
+        String s = yongHu.getName();
         YongHu p = yongHuService.DengLu(s);
 
-        if (p.getPassword() .equals(yongHu.getPassword())) {
+        System.out.println(p);
 
-            model.addAttribute("shenfen",yongHu.getShenfen());
-            return "userInfo";
-
+        if (p.getPassword().equals(yongHu.getPassword())) {
+            map.put("user", p);
+            map.put("code", 1);
         } else {
-
-            return "error";
+            map.put("code", 2);
         }
-
-
+        return map;
     }
 
     /*
-    * 注册案例,如果是老师，把老师表注册了
-    * */
+     * 注册案例,如果是老师，把老师表注册了
+     * */
     @RequestMapping("/saveYonghur")
-    public String saveTeacher(YongHu yongHu) {
+    public Map<String, Object> saveTeacher(@RequestBody YongHu yongHu) {
+        map.clear();
+        System.out.println(yongHu);
 
-        if(yongHu.getShenfen()=="teacher")
-        {
+        if (yongHu.getShenfen() == "teacher") {
             Teacher teacher = new Teacher();
             teacher.setName(yongHu.getName());
             teacher.setXueyuan(yongHu.getXueyuan());
@@ -64,7 +72,7 @@ public class yongHuController {
         }
 
         yongHuService.saveYongHu(yongHu);
-        return "userInfo";
+        return map;
     }
 
     @RequestMapping("/findAll")

@@ -1,7 +1,7 @@
 package com.sunforits.jiaocaizhengding.service;
 
-import com.sunforits.jiaocaizhengding.domain.BookChaXun;
-import com.sunforits.jiaocaizhengding.domain.TeacherChaXun;
+import com.sunforits.jiaocaizhengding.entity.BookChaXun;
+import com.sunforits.jiaocaizhengding.entity.TeacherChaXun;
 
 import java.util.List;
 

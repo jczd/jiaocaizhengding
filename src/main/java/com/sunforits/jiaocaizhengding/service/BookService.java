@@ -1,6 +1,6 @@
 package com.sunforits.jiaocaizhengding.service;
 
-import com.sunforits.jiaocaizhengding.domain.Book;
+import com.sunforits.jiaocaizhengding.entity.Book;
 
 import java.util.List;
 

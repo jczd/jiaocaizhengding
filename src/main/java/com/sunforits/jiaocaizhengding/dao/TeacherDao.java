@@ -1,16 +1,14 @@
 package com.sunforits.jiaocaizhengding.dao;
 
-import com.sunforits.jiaocaizhengding.domain.Teacher;
+import com.sunforits.jiaocaizhengding.entity.Teacher;
 import org.apache.ibatis.annotations.*;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * @date 2020/5/10-15:54
  */
-
-@Repository
+@Mapper
 public interface TeacherDao {
 
     @Select("select * from teacher where name = #{name}")

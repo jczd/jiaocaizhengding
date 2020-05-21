@@ -1,10 +1,10 @@
 package com.sunforits.jiaocaizhengding.dao;
 
-import com.sunforits.jiaocaizhengding.domain.YongHu;
+import com.sunforits.jiaocaizhengding.entity.YongHu;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import java.util.List;
  * @date 2020/5/11-11:21
  */
 
-@Repository
+@Mapper
 public interface YongHuDao {
 
     @Select("select * from yonghu where name = #{name}")

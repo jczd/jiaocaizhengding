@@ -1,10 +1,10 @@
 package com.sunforits.jiaocaizhengding.dao;
 
-import com.sunforits.jiaocaizhengding.domain.BookChaXun;
+import com.sunforits.jiaocaizhengding.entity.BookChaXun;
 
-import com.sunforits.jiaocaizhengding.domain.TeacherChaXun;
+import com.sunforits.jiaocaizhengding.entity.TeacherChaXun;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import java.util.List;
  * @date 2020/5/18-12:26
  */
 
-@Repository
+@Mapper
 public interface SchoolDao {
 
     @Select("SELECT book.`name`,book.`chubanshe`,book.`zuozhe`, allbook.`shuliang`,allbook.`teacher` FROM book LEFT OUTER JOIN allbook ON allbook.`book`=book.`name`  ")

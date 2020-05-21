@@ -1,7 +1,6 @@
 package com.sunforits.jiaocaizhengding.service;
 
-import com.sunforits.jiaocaizhengding.domain.allBook;
-import org.springframework.stereotype.Service;
+import com.sunforits.jiaocaizhengding.entity.allBook;
 
 import java.util.List;
 

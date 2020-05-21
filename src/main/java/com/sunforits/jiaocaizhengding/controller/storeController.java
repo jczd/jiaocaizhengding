@@ -1,7 +1,7 @@
 package com.sunforits.jiaocaizhengding.controller;
 
-import com.sunforits.jiaocaizhengding.domain.Book;
-import com.sunforits.jiaocaizhengding.domain.BookChaXun;
+import com.sunforits.jiaocaizhengding.entity.Book;
+import com.sunforits.jiaocaizhengding.entity.BookChaXun;
 import com.sunforits.jiaocaizhengding.service.BookService;
 import com.sunforits.jiaocaizhengding.service.schoolService;
 import org.springframework.beans.factory.annotation.Autowired;

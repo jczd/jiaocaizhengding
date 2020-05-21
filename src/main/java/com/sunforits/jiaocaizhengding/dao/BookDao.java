@@ -1,17 +1,17 @@
 package com.sunforits.jiaocaizhengding.dao;
 
-import com.sunforits.jiaocaizhengding.domain.Book;
+import com.sunforits.jiaocaizhengding.entity.Book;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * @date 2020/5/11-12:08
  */
-@Repository
+@Mapper
 public interface BookDao  {
 
     @Insert("insert into book (name,chubanshe,money,zuozhe) values (#{name},#{chubanshe},#{money},#{zuozhe})")

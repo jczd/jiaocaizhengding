@@ -1,7 +1,7 @@
 package com.sunforits.jiaocaizhengding.service.impl;
 
 import com.sunforits.jiaocaizhengding.dao.TeacherDao;
-import com.sunforits.jiaocaizhengding.domain.Teacher;
+import com.sunforits.jiaocaizhengding.entity.Teacher;
 import com.sunforits.jiaocaizhengding.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

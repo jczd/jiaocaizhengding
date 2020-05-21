@@ -2,7 +2,7 @@ package com.sunforits.jiaocaizhengding.service;
 
 
 
-import com.sunforits.jiaocaizhengding.domain.Teacher;
+import com.sunforits.jiaocaizhengding.entity.Teacher;
 
 import java.util.List;
 

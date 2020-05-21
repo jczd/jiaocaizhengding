@@ -2,7 +2,7 @@ package com.sunforits.jiaocaizhengding.service;
 
 
 
-import com.sunforits.jiaocaizhengding.domain.YongHu;
+import com.sunforits.jiaocaizhengding.entity.YongHu;
 
 import java.util.List;
 

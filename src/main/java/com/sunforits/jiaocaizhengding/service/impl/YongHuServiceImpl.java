@@ -1,7 +1,7 @@
 package com.sunforits.jiaocaizhengding.service.impl;
 
 import com.sunforits.jiaocaizhengding.dao.YongHuDao;
-import com.sunforits.jiaocaizhengding.domain.YongHu;
+import com.sunforits.jiaocaizhengding.entity.YongHu;
 import com.sunforits.jiaocaizhengding.service.YongHuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @date 2020/5/11-11:18
  */
-@Service("yongHuservice")
+@Service
 public class YongHuServiceImpl implements YongHuService {
 
     @Autowired

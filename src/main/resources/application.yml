@@ -8,25 +8,15 @@ spring:
   profiles:
     active: dev
 
-  thymeleaf:
-    cache: false
-    servlet:
-      content-type: text/html
-    enabled: true
-    encoding: UTF-8
-    prefix: classpath:/templates/
-    suffix: .html
-    mode: LEGACYHTML5
-
   mvc:
-    static-path-pattern: /static/**
+#    static-path-pattern: /static/**
   resources:
     static-locations: classpath:/static/
 
 #mybatis配置
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.dus.entity
+  type-aliases-package: com.jiaocaizhengding.entity
   configuration:
     map-underscore-to-camel-case: true
 
@@ -36,7 +26,7 @@ mapper:
   not-empty: false
   identity: MYSQL
 
-# pageHelper
+# pageHelper 分页插件
 pagehelper:
   helperDialect: mysql
   reasonable: true
@@ -45,9 +35,8 @@ pagehelper:
 
 debug: false
 
-#logging:
-#  pattern:
-#    console: "%-5level %logger{50} - %msg%n"
-#  register-shutdown-hook: false
-#  level:
-#    root: info
+# 日志级别
+logging:
+  level:
+    root: info
+    com.sunforits.dao: debug
