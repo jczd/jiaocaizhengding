@@ -42,7 +42,8 @@ public class yongHuController {
         map.clear();
         System.out.println(yongHu);
 
-        YongHu p = yongHuService.DengLu(yongHu.getName());
+        String s = yongHu.getName();
+        YongHu p = yongHuService.DengLu(s);
 
         System.out.println(p);
 

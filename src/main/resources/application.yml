@@ -9,7 +9,7 @@ spring:
     active: dev
 
   mvc:
-#    static-path-pattern: /static/**
+  #    static-path-pattern: /static/**
   resources:
     static-locations: classpath:/static/
 
@@ -39,4 +39,6 @@ debug: false
 logging:
   level:
     root: info
-    com.sunforits.dao: debug
+    com:
+      sunforits:
+        dao: debug
