@@ -1,7 +1,5 @@
 package com.sunforits.jiaocaizhengding.service;
 
-
-
 import com.sunforits.jiaocaizhengding.entity.YongHu;
 
 import java.util.List;
@@ -9,8 +7,6 @@ import java.util.List;
 /**
  * @date 2020/5/11-11:18
  */
-
-
 public interface YongHuService {
 
     public YongHu DengLu(String name);

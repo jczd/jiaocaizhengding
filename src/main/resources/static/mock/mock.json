@@ -4,15 +4,24 @@
            {
             "id":"52",
             "rid":23,
-            "username":"qh",
-            "password":"123456",
-            "name":"钱辉",
+            "username":"xs",
+            "password":"xs",
+            "name":"张三",
             "type":"学生",
             "email":"12345678@qq.com",
             "token":"HF_JKSKFJ6SsdfK8LFHSDdgbd_OGUISKL_FWO_TU5IERUNDFh9sKGfNXMfBdfgO9SDFGLKE_R23JYDOFGSfDHFGREUI_TYFGfSDFGSD_1Ih"
+           },
+           {
+            "id":"45",
+            "rid":256,
+            "username":"js",
+            "password":"js",
+            "name":"李晓红",
+            "type":"教师",
+            "email":"12345678@qq.com",
+            "token":"HF_JKSKFJ6SsLFHSDdgbd_OGUISKL_FWO_TU5IERUNDFh9sKGfNXMfBdfgO9SDFGLKE_R23JYDOFGSfDHFGREUI_TYFGfSDFGSD_1Ih"
            }
-       ]
-    },
+       ],
     "meta":{
        "true":{
         "msg":"登陆成功",
@@ -123,4 +132,5 @@
         { "id": "032", "title": "寄小读者", "name": "冰心" , "price": "66","number":"0" },
         { "id": "033", "title": "寄小读者", "name": "冰心" , "price": "66" ,"number":"0"}
      ]
+    }
 }

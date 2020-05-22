@@ -21,7 +21,7 @@ import java.util.Map;
  * 用户注册登录管理
  */
 @RestController
-@RequestMapping("/yonghu")
+@RequestMapping("/yongHu")
 public class yongHuController {
 
     @Autowired
@@ -37,13 +37,12 @@ public class yongHuController {
      *
      * @return
      */
-    @GetMapping("/denglu")
+    @RequestMapping("/denglu")
     public Map<String, Object> denglu(YongHu yongHu) {
         map.clear();
         System.out.println(yongHu);
 
-        String s = yongHu.getName();
-        YongHu p = yongHuService.DengLu(s);
+        YongHu p = yongHuService.DengLu(yongHu.getName());
 
         System.out.println(p);
 
