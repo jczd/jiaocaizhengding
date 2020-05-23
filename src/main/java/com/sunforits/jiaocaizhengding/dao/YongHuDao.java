@@ -21,10 +21,10 @@ public interface YongHuDao {
     @Insert("insert into yonghu (name,password,number,shenfen,xueyuan) values (#{name},#{password},#{number},#{shenfen},#{xueyuan})")
     public void saveYongHu(YongHu yongHu);
 
-    @Delete("delete from yonghu where id = #{id} ")
-    int deleteUser(Integer id);
+    @Delete("delete from yonghu where uid = #{uid} ")
+    int deleteUser(Integer uid);
 
-    @Select("select name,password from yonghu where name=#{name} and password=#{password}")
+    @Select("select * from yonghu where name=#{name} and password=#{password}")
     public YongHu findByNP(YongHu yongHu);
 
     @Select("select * from yonghu")

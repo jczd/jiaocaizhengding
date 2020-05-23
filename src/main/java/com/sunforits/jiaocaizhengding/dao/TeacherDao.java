@@ -18,7 +18,7 @@ public interface TeacherDao {
     @Select("select * from teacher")
     public List<Teacher> findAll();
 
-    @Insert("insert into teacher(name,password) values (#{name},#{password})")
+    @Insert("insert into teacher(name,xueyuan) values (#{name},#{xueyuan})")
     public void saveTeacher(Teacher teacher);
 
     @Delete("delete from teacher where id = #{id} ")

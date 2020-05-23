@@ -13,4 +13,6 @@ public class Book implements Serializable {
     private String chubanshe;
     private Integer money;
     private String zuozhe;
+
+
 }
