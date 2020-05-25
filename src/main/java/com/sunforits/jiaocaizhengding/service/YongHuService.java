@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface YongHuService {
 
-    public YongHu DengLu(String name);
+    public YongHu DengLu(Integer number);
 
     public void saveYongHu(YongHu yongHu);
 
