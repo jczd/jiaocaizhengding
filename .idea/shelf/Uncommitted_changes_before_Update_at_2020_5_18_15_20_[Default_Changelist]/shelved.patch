@@ -1,0 +1,455 @@
+Index: src/main/java/com/sunforits/jiaocaizhengding/controller/RouterController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.sunforits.jiaocaizhengding.controller;\r\n\r\nimport com.sun.org.apache.xml.internal.utils.XMLStringDefault;\r\nimport org.springframework.stereotype.Controller;\r\nimport org.springframework.web.bind.annotation.RequestMapping;\r\n\r\n@Controller\r\npublic class RouterController {\r\n    @RequestMapping(value = {\"/\"})\r\n    public String defaultPage() {\r\n        return \"index\";\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/sunforits/jiaocaizhengding/controller/RouterController.java	(revision a3e51e0b0c39e9003dbf1c453a65f00441acfea6)
++++ src/main/java/com/sunforits/jiaocaizhengding/controller/RouterController.java	(date 1589710818500)
+@@ -8,6 +8,6 @@
+ public class RouterController {
+     @RequestMapping(value = {"/"})
+     public String defaultPage() {
+-        return "index";
++        return "login/index";
+     }
+ }
+Index: src/main/resources/templates/login/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!doctype html>\r\n<html lang=\"zh\">\r\n<head>\r\n\t<meta charset=\"UTF-8\">\r\n\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\"> \r\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n\t<title>简洁时尚的用户登录界面设计效果|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>\r\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"css/htmleaf-demo.css\">\r\n\t<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,700italic,600'>\r\n\t<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>\r\n\t<link rel=\"stylesheet\" href=\"css/style.css\">\r\n</head>\r\n<body>\r\n\t<div class=\"htmleaf-container\">\r\n\t\t<div class=\"cont_principal\">\r\n\t\t\t<header class=\"htmleaf-header\">\r\n\t\t\t\t<h1>简洁时尚的用户登录界面设计效果 <span>The effect of the user login interface design</span></h1>\r\n\t\t\t\t<div class=\"htmleaf-links\">\r\n\t\t\t\t\t<a class=\"htmleaf-icon icon-htmleaf-home-outline\" href=\"http://www.htmleaf.com/\" title=\"jQuery之家\" target=\"_blank\"><span> jQuery之家</span></a>\r\n\t\t\t\t\t<a class=\"htmleaf-icon icon-htmleaf-arrow-forward-outline\" href=\"http://www.htmleaf.com/css3/ui-design/201603013167.html\" title=\"返回下载页\" target=\"_blank\"><span> 返回下载页</span></a>\r\n\t\t\t\t</div>\r\n\t\t\t</header>\r\n\t\t  <div class=\"cont_join  \">\r\n\t\t    <div class=\"cont_letras\">\r\n\t\t      <p>LET 'S</p>\r\n\t\t      <p>GET</p>\r\n\t\t      <p>LOST</p>\r\n\t\t    </div>\r\n\r\n\t\t    <div class=\"cont_form_join\">\r\n\t\t      <h2>JOIN</h2>\r\n\r\n\t\t      <p>用户名:</p>    \r\n\t\t      <input type=\"text\" class=\"input_text\" />\r\n\r\n\t\t      <p>密　码:</p>    \r\n\t\t      <input type=\"text\" class=\"input_text\" />\r\n\r\n\t\t      <p>验证码:</p>    \r\n\t\t      <input type=\"password\" class=\"input_text\" />\r\n\t\t    </div>\r\n\t\t  \r\n\t\t    <div class=\"cont_join_form_finish\">\r\n\t\t      <h2>Finish <i class=\"material-icons\">&#xE5CA;</i></h2>  \r\n\t\t    </div>\r\n\r\n\t\t    <div class=\"cont_btn_join\">\r\n\t\t      <a href=\"#\" onclick='join_1()'>JOIN</a>\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t</div>\r\n\t</div>\r\n\t\r\n\t<script src=\"js/index.js\"></script>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/resources/templates/login/index.html	(revision a3e51e0b0c39e9003dbf1c453a65f00441acfea6)
++++ src/main/resources/templates/login/index.html	(date 1589711104254)
+@@ -5,10 +5,10 @@
+ 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 	<title>简洁时尚的用户登录界面设计效果|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+-	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
++	<link rel="stylesheet" type="text/css" href="login/css/htmleaf-demo.css">
+ 	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,700italic,600'>
+ 	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+-	<link rel="stylesheet" href="css/style.css">
++	<link rel="stylesheet" href="login/css/style.css">
+ </head>
+ <body>
+ 	<div class="htmleaf-container">
+@@ -50,7 +50,9 @@
+ 		  </div>
+ 		</div>
+ 	</div>
+-	
++	<form>
++		<button onsubmit="this"></button>
++	</form>
+ 	<script src="js/index.js"></script>
+ </body>
+ </html>
+\ No newline at end of file
+Index: src/main/resources/application.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>server:\r\n  tomcat:\r\n    uri-encoding: UTF-8\r\n  port: 8080\r\n\r\n\r\nspring:\r\n  profiles:\r\n    active: dev\r\n\r\n  thymeleaf:\r\n    cache: false\r\n    servlet:\r\n      content-type: text/html\r\n    enabled: true\r\n    encoding: UTF-8\r\n    prefix: classpath:/templates/\r\n    suffix: .html\r\n    mode: LEGACYHTML5\r\n\r\n  mvc:\r\n    static-path-pattern: /static/**\r\n  resources:\r\n    static-locations: classpath:/static/\r\n\r\n#mybatis配置\r\nmybatis:\r\n  mapper-locations: classpath:mapper/*.xml\r\n  type-aliases-package: com.dus.entity\r\n  configuration:\r\n    map-underscore-to-camel-case: true\r\n\r\n# mapper\r\nmapper:\r\n  mappers: tk.mybatis.mapper.common.Mapper\r\n  not-empty: false\r\n  identity: MYSQL\r\n\r\n# pageHelper\r\npagehelper:\r\n  helperDialect: mysql\r\n  reasonable: true\r\n  supportMethodsArguments: true\r\n  params: count=countSql\r\n\r\ndebug: false\r\n\r\n#logging:\r\n#  pattern:\r\n#    console: \"%-5level %logger{50} - %msg%n\"\r\n#  register-shutdown-hook: false\r\n#  level:\r\n#    root: info\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/resources/application.yml	(revision a3e51e0b0c39e9003dbf1c453a65f00441acfea6)
++++ src/main/resources/application.yml	(date 1589711104236)
+@@ -1,8 +1,7 @@
+ server:
+   tomcat:
+     uri-encoding: UTF-8
+-  port: 8080
+-
++  port: 80
+ 
+ spring:
+   profiles:
+@@ -26,7 +25,7 @@
+ #mybatis配置
+ mybatis:
+   mapper-locations: classpath:mapper/*.xml
+-  type-aliases-package: com.dus.entity
++  type-aliases-package: com.jiaocaizhengding.entity
+   configuration:
+     map-underscore-to-camel-case: true
+ 
+Index: src/main/resources/templates/index.html
+===================================================================
+--- src/main/resources/templates/index.html	(revision a3e51e0b0c39e9003dbf1c453a65f00441acfea6)
++++ src/main/resources/templates/index.html	(revision a3e51e0b0c39e9003dbf1c453a65f00441acfea6)
+@@ -1,10 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="en">
+-<head>
+-    <meta charset="UTF-8">
+-    <title>教材征订系统</title>
+-</head>
+-<body>
+-Hello
+-</body>
+-</html>
+\ No newline at end of file
+Index: src/main/java/com/sunforits/jiaocaizhengding/controller/yongHuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/sunforits/jiaocaizhengding/controller/yongHuController.java	(date 1589183197018)
++++ src/main/java/com/sunforits/jiaocaizhengding/controller/yongHuController.java	(date 1589183197018)
+@@ -0,0 +1,77 @@
++package com.sunforits.jiaocaizhengding.controller;
++
++import com.sunforits.jiaocaizhengding.entity.YongHu;
++import com.sunforits.jiaocaizhengding.service.YongHuService;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.stereotype.Controller;
++import org.springframework.ui.Model;
++import org.springframework.web.bind.annotation.RequestMapping;
++import org.springframework.web.bind.annotation.RestController;
++
++import java.util.List;
++import java.util.Map;
++
++/**
++ * 帐户web
++ */
++@RestController
++@RequestMapping("/yongHu")
++public class yongHuController {
++
++    @Autowired
++    private YongHuService yongHuService;
++
++    Map<String, Object> map;
++
++    /**
++     * 保存
++     *
++     * @return
++     */
++    @RequestMapping("/denglu")
++    public String denglu(YongHu yongHu, Model model) {
++        System.out.println(yongHu);
++
++        String s = yongHu.getName();
++        YongHu p = yongHuService.tDengLu(s);
++
++        if (p.getPassword().equals(yongHu.getPassword())) {
++            model.addAttribute("shenfen", yongHu.getShenfen());
++            return "userInfo";
++
++        } else {
++            return "error";
++        }
++    }
++
++    /*
++     * 注册
++     * */
++    @RequestMapping("/saveYonghur")
++    public String saveTeacher(String name1, String password1) {
++        YongHu a = new YongHu();
++        a.setName(name1);
++        a.setPassword(password1);
++        yongHuService.saveYongHu(a);
++        return "userInfo";
++    }
++
++    @RequestMapping("/findAll")
++    public String findAll() {
++        List<YongHu> list = yongHuService.findAll();
++        for (YongHu a : list) {
++            System.out.println(a);
++        }
++        return "userInfo";
++    }
++
++    @RequestMapping("/findByNP")
++    public String findByNP(YongHu yongHu) {
++
++        yongHuService.findByNP(yongHu);
++        System.out.println(yongHu);
++        return "userInfo";
++    }
++
++
++}
+Index: src/main/java/com/sunforits/jiaocaizhengding/entity/YongHu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/sunforits/jiaocaizhengding/entity/YongHu.java	(date 1589180549368)
++++ src/main/java/com/sunforits/jiaocaizhengding/entity/YongHu.java	(date 1589180549368)
+@@ -0,0 +1,55 @@
++package com.sunforits.jiaocaizhengding.entity;
++
++import java.io.Serializable;
++
++/**
++ * @date 2020/5/11-11:06
++ */
++public class YongHu implements Serializable {
++    private String name;
++    private String password;
++    private Integer number;
++    private String shenfen;
++
++    public String getName() {
++        return name;
++    }
++
++    public void setName(String name) {
++        this.name = name;
++    }
++
++    public String getPassword() {
++        return password;
++    }
++
++    public void setPassword(String password) {
++        this.password = password;
++    }
++
++    public Integer getNumber() {
++        return number;
++    }
++
++    public void setNumber(Integer number) {
++        this.number = number;
++    }
++
++    public String getShenfen() {
++        return shenfen;
++    }
++
++    public void setShenfen(String shenfen) {
++        this.shenfen = shenfen;
++    }
++
++    @Override
++    public String toString() {
++        return "YongHu{" +
++                "name='" + name + '\'' +
++                ", password='" + password + '\'' +
++                ", number=" + number +
++                ", shenfen='" + shenfen + '\'' +
++                '}';
++    }
++}
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n    <parent>\r\n        <groupId>org.springframework.boot</groupId>\r\n        <artifactId>spring-boot-starter-parent</artifactId>\r\n        <version>2.2.0.RELEASE</version>\r\n        <relativePath/> <!-- lookup parent from repository -->\r\n    </parent>\r\n\r\n    <groupId>com.sunforits</groupId>\r\n    <artifactId>jiaocaizhengding</artifactId>\r\n    <version>0.0.1-SNAPSHOT</version>\r\n    <name>jiaocaizhengding</name>\r\n    <description>教材征订系统</description>\r\n\r\n    <properties>\r\n        <java.version>1.8</java.version>\r\n    </properties>\r\n\r\n    <dependencies>\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-web</artifactId>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-test</artifactId>\r\n            <scope>test</scope>\r\n            <exclusions>\r\n                <exclusion>\r\n                    <groupId>org.junit.vintage</groupId>\r\n                    <artifactId>junit-vintage-engine</artifactId>\r\n                </exclusion>\r\n            </exclusions>\r\n        </dependency>\r\n\r\n        <!-- lombok  开发利器-->\r\n        <dependency>\r\n            <groupId>org.projectlombok</groupId>\r\n            <artifactId>lombok</artifactId>\r\n            <optional>true</optional>\r\n        </dependency>\r\n\r\n        <!--     数据库相关    -->\r\n        <dependency>\r\n            <groupId>mysql</groupId>\r\n            <artifactId>mysql-connector-java</artifactId>\r\n            <version>8.0.17</version>\r\n            <scope>runtime</scope>\r\n        </dependency>\r\n        <!-- HikariCP 连接池 -->\r\n        <dependency>\r\n            <groupId>com.zaxxer</groupId>\r\n            <artifactId>HikariCP</artifactId>\r\n            <version>3.3.1</version>\r\n        </dependency>\r\n        <!-- JDBC连接数据库，因为要用HikariCP，所以需要将SpringBoot中的tomcat-jdbc排除 -->\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-jdbc</artifactId>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>org.mybatis.spring.boot</groupId>\r\n            <artifactId>mybatis-spring-boot-starter</artifactId>\r\n            <version>2.1.0</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>tk.mybatis</groupId>\r\n            <artifactId>mapper-spring-boot-starter</artifactId>\r\n            <version>2.1.5</version>\r\n        </dependency>\r\n\r\n        <!--  分页插件 -->\r\n        <dependency>\r\n            <groupId>com.github.pagehelper</groupId>\r\n            <artifactId>pagehelper-spring-boot-starter</artifactId>\r\n            <version>1.2.12</version>\r\n        </dependency>\r\n\r\n        <!-- json解析 -->\r\n        <dependency>\r\n            <groupId>com.alibaba</groupId>\r\n            <artifactId>fastjson</artifactId>\r\n            <version>1.2.58</version>\r\n        </dependency>\r\n\r\n        <!-- thymeleaf  -->\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-thymeleaf</artifactId>\r\n        </dependency>\r\n\r\n        <!-- 单元测试 -->\r\n        <dependency>\r\n            <groupId>junit</groupId>\r\n            <artifactId>junit</artifactId>\r\n        </dependency>\r\n    </dependencies>\r\n\r\n    <build>\r\n        <plugins>\r\n            <plugin>\r\n                <groupId>org.springframework.boot</groupId>\r\n                <artifactId>spring-boot-maven-plugin</artifactId>\r\n            </plugin>\r\n        </plugins>\r\n    </build>\r\n\r\n</project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pom.xml	(revision a3e51e0b0c39e9003dbf1c453a65f00441acfea6)
++++ pom.xml	(date 1589184798576)
+@@ -37,12 +37,27 @@
+             </exclusions>
+         </dependency>
+ 
++        <!--单元测试-->
++        <dependency>
++            <groupId>junit</groupId>
++            <artifactId>junit</artifactId>
++            <version>4.11</version>
++            <scope>test</scope>
++        </dependency>
++
++
++
+         <!-- lombok  开发利器-->
+         <dependency>
+             <groupId>org.projectlombok</groupId>
+             <artifactId>lombok</artifactId>
+             <optional>true</optional>
+         </dependency>
++        <dependency>
++            <groupId>cn.hutool</groupId>
++            <artifactId>hutool-all</artifactId>
++            <version>5.0.6</version>
++        </dependency>
+ 
+         <!--     数据库相关    -->
+         <dependency>
+@@ -73,7 +88,6 @@
+             <artifactId>mapper-spring-boot-starter</artifactId>
+             <version>2.1.5</version>
+         </dependency>
+-
+         <!--  分页插件 -->
+         <dependency>
+             <groupId>com.github.pagehelper</groupId>
+@@ -81,7 +95,7 @@
+             <version>1.2.12</version>
+         </dependency>
+ 
+-        <!-- json解析 -->
++        <!--     json解析 -->
+         <dependency>
+             <groupId>com.alibaba</groupId>
+             <artifactId>fastjson</artifactId>
+@@ -94,11 +108,44 @@
+             <artifactId>spring-boot-starter-thymeleaf</artifactId>
+         </dependency>
+ 
+-        <!-- 单元测试 -->
++        <!-- swagger  api接口框架-->
++        <dependency>
++            <groupId>io.springfox</groupId>
++            <artifactId>springfox-swagger2</artifactId>
++            <version>2.9.2</version>
++        </dependency>
++        <dependency>
++            <groupId>io.springfox</groupId>
++            <artifactId>springfox-swagger-ui</artifactId>
++            <version>2.9.2</version>
++        </dependency>
++        <dependency>
++            <groupId>com.fasterxml.jackson.core</groupId>
++            <artifactId>jackson-databind</artifactId>
++            <version>2.10.0</version>
++        </dependency>
++        <!-- end... -->
++
++        <!-- easyexcel  -->
++        <!-- https://mvnrepository.com/artifact/com.alibaba/easyexcel -->
+         <dependency>
+-            <groupId>junit</groupId>
+-            <artifactId>junit</artifactId>
++            <groupId>com.alibaba</groupId>
++            <artifactId>easyexcel</artifactId>
++            <version>2.1.0-beta4</version>
++        </dependency>
++
++
++        <dependency>
++            <groupId>org.springframework</groupId>
++            <artifactId>spring-beans</artifactId>
++            <version>5.2.1.RELEASE</version>
++        </dependency>
++        <dependency>
++            <groupId>org.junit.jupiter</groupId>
++            <artifactId>junit-jupiter-api</artifactId>
++            <version>5.5.2</version>
+         </dependency>
++
+     </dependencies>
+ 
+     <build>
+Index: src/main/java/com/sunforits/jiaocaizhengding/service/YongHuService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/sunforits/jiaocaizhengding/service/YongHuService.java	(date 1589710729242)
++++ src/main/java/com/sunforits/jiaocaizhengding/service/YongHuService.java	(date 1589710729242)
+@@ -0,0 +1,46 @@
++package com.sunforits.jiaocaizhengding.service;
++
++import com.sunforits.jiaocaizhengding.entity.YongHu;
++import com.sunforits.jiaocaizhengding.mapper.yongHuMapper;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.stereotype.Service;
++
++
++import java.util.List;
++
++/**
++ * @date 2020/5/11-11:18
++ */
++@Service
++public class YongHuService {
++
++    @Autowired
++    yongHuMapper yongHuDao;
++
++    public YongHu tDengLu(String name) {
++        return yongHuDao.tDengLu(name);
++    }
++
++
++    public void saveYongHu(YongHu yongHu) {
++        yongHuDao.saveYongHu(yongHu);
++    }
++
++
++    public void deleteUser(Integer id) {
++        yongHuDao.deleteUser(id);
++    }
++
++
++    public YongHu findByNP(YongHu yongHu) {
++        YongHu byNP = yongHuDao.findByNP(yongHu);
++        return byNP;
++    }
++
++
++    public List<YongHu> findAll() {
++        List<YongHu> all = yongHuDao.findAll();
++        return all;
++    }
++
++}
+Index: src/main/java/com/sunforits/jiaocaizhengding/mapper/yongHuMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/sunforits/jiaocaizhengding/mapper/yongHuMapper.java	(date 1589184866351)
++++ src/main/java/com/sunforits/jiaocaizhengding/mapper/yongHuMapper.java	(date 1589184866351)
+@@ -0,0 +1,27 @@
++package com.sunforits.jiaocaizhengding.mapper;
++
++import com.sunforits.jiaocaizhengding.entity.YongHu;
++import org.apache.ibatis.annotations.Delete;
++import org.apache.ibatis.annotations.Insert;
++import org.apache.ibatis.annotations.Mapper;
++import org.apache.ibatis.annotations.Select;
++
++import java.util.List;
++
++@Mapper
++public interface yongHuMapper {
++    @Select("select * from user where name = #{name}")
++    public YongHu tDengLu(String name);
++
++    @Insert("insert into yonghu (name,password,number,shenfen) values (#{name},#{password},#{number},#{shenfen})")
++    public void saveYongHu(YongHu yongHu);
++
++    @Delete("delete from yonghu where id = #{id} ")
++    int deleteUser(Integer id);
++
++    @Select("select name,password from yonghu where name=#{name} and password=#{password}")
++    public YongHu findByNP(YongHu yongHu);
++
++    @Select("select * from yonghu")
++    public List<YongHu> findAll();
++}
+Index: src/main/resources/application-dev.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring:\r\n\r\n  datasource:\r\n    type: com.zaxxer.hikari.HikariDataSource\r\n    driver-class-name:  com.mysql.cj.jdbc.Driver\r\n    url: jdbc:mysql://122.51.214.148:3306/jczd?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone = GMT\r\n    username: jczd\r\n    password: 'jczd'\r\n\r\n    hikari:\r\n      minimum-idle: 10\r\n      maximum-pool-size: 25\r\n      auto-commit: true\r\n      idle-timeout: 30000\r\n      pool-name: ExpendHikariCP\r\n      max-lifetime: 1800000\r\n      connection-timeout: 30000\r\n      connection-test-query: select 1\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/resources/application-dev.yml	(revision a3e51e0b0c39e9003dbf1c453a65f00441acfea6)
++++ src/main/resources/application-dev.yml	(date 1589184890906)
+@@ -3,9 +3,9 @@
+   datasource:
+     type: com.zaxxer.hikari.HikariDataSource
+     driver-class-name:  com.mysql.cj.jdbc.Driver
+-    url: jdbc:mysql://122.51.214.148:3306/jczd?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone = GMT
++    url: jdbc:mysql://sunforits.com:3306/material?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone = GMT
+     username: jczd
+-    password: 'jczd'
++    password: jczd
+ 
+     hikari:
+       minimum-idle: 10

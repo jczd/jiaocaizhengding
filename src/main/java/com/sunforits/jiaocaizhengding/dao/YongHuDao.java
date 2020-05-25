@@ -24,7 +24,7 @@ public interface YongHuDao {
     @Delete("delete from yonghu where id = #{id} ")
     int deleteUser(Integer id);
 
-    @Select("select name,password from yonghu where name=#{name} and password=#{password}")
+    @Select("select * from yonghu where name=#{name} and password=#{xueyuan}")
     public YongHu findByNP(YongHu yongHu);
 
     @Select("select * from yonghu")

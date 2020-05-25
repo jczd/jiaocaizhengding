@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class YongHu implements Serializable {
     private String name;
     private String password;
-    private Integer number;
+    private String number;
     private String shenfen;
     private String xueyuan;
 }

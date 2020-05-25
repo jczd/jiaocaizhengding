@@ -5,6 +5,7 @@ import com.sunforits.jiaocaizhengding.entity.YongHu;
 import com.sunforits.jiaocaizhengding.service.TeacherService;
 import com.sunforits.jiaocaizhengding.service.YongHuService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -38,10 +39,7 @@ public class yongHuController {
         map.clear();
         System.out.println(yongHu);
 
-        String s = yongHu.getName();
-        YongHu p = yongHuService.DengLu(s);
-
-        System.out.println(p);
+        YongHu p = yongHuService.DengLu(yongHu.getName());
 
         if (p.getPassword().equals(yongHu.getPassword())) {
             map.put("user", p);
@@ -57,7 +55,7 @@ public class yongHuController {
      * 注册案例,如果是老师，把老师表注册了
      * */
     @RequestMapping("/saveYonghur")
-    public Map<String, Object> saveTeacher(YongHu yongHu) {
+    public Map<String, Object> saveTeacher( YongHu yongHu) {
         map.clear();
         System.out.println(yongHu);
 
@@ -71,7 +69,6 @@ public class yongHuController {
             yongHuService.saveYongHu(yongHu);
             map.put("code", 1);
         } catch (Exception e) {
-            e.printStackTrace();
             map.put("code", 2);
         }
         return map;
@@ -103,7 +100,6 @@ public class yongHuController {
         }
 
         System.out.println(byNP);
-
         return map;
     }
 
