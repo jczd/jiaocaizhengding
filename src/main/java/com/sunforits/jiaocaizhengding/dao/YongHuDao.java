@@ -15,16 +15,16 @@ import java.util.List;
 @Mapper
 public interface YongHuDao {
 
-    @Select("select * from yonghu where name = #{name}")
-    public YongHu DengLu(String name);
+    @Select("select * from yonghu where number = #{number}")
+    public YongHu DengLu(Integer number);
 
     @Insert("insert into yonghu (name,password,number,shenfen,xueyuan) values (#{name},#{password},#{number},#{shenfen},#{xueyuan})")
     public void saveYongHu(YongHu yongHu);
 
-    @Delete("delete from yonghu where id = #{id} ")
-    int deleteUser(Integer id);
+    @Delete("delete from yonghu where uid = #{uid} ")
+    int deleteUser(Integer uid);
 
-    @Select("select * from yonghu where name=#{name} and password=#{xueyuan}")
+    @Select("select * from yonghu where name=#{name} and password=#{password}")
     public YongHu findByNP(YongHu yongHu);
 
     @Select("select * from yonghu")

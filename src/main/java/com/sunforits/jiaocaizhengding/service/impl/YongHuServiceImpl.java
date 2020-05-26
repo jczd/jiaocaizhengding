@@ -19,8 +19,8 @@ public class YongHuServiceImpl implements YongHuService {
     YongHuDao yongHuDao;
 
     @Override
-    public YongHu DengLu(String name) {
-        return yongHuDao.DengLu(name);
+    public YongHu DengLu(Integer number) {
+        return yongHuDao.DengLu(number);
     }
 
     @Override
