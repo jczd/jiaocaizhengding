@@ -19,7 +19,9 @@ public class YongHuServiceImpl implements YongHuService {
     YongHuDao yongHuDao;
 
     @Override
-    public YongHu DengLu(Integer number) {
+    public YongHu DengLu(String number) {
+        System.out.println("登录");
+        System.out.println(number);
         return yongHuDao.DengLu(number);
     }
 

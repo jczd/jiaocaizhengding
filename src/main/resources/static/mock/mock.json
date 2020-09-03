@@ -1,38 +1,6 @@
 {   
     "data":{
-       "userinfo":[
-           {
-            "id":"52",
-            "rid":23,
-            "username":"xs",
-            "password":"xs",
-            "name":"张三",
-            "type":"学生",
-            "email":"12345678@qq.com",
-            "token":"HF_JKSKFJ6SsdfK8LFHSDdgbd_OGUISKL_FWO_TU5IERUNDFh9sKGfNXMfBdfgO9SDFGLKE_R23JYDOFGSfDHFGREUI_TYFGfSDFGSD_1Ih"
-           },
-           {
-            "id":"45",
-            "rid":256,
-            "username":"js",
-            "password":"js",
-            "name":"李晓红",
-            "type":"教师",
-            "email":"12345678@qq.com",
-            "token":"HF_JKSKFJ6SsLFHSDdgbd_OGUISKL_FWO_TU5IERUNDFh9sKGfNXMfBdfgO9SDFGLKE_R23JYDOFGSfDHFGREUI_TYFGfSDFGSD_1Ih"
-           }
-       ],
-    "meta":{
-       "true":{
-        "msg":"登陆成功",
-        "status":200
-       },
-       "false":{
-        "msg":"登陆失败",
-        "status":400
-       }
-    },
-    "menu":[
+    "menugly":[
         {
             "id":"101",
             "titleName":"用户管理",
@@ -48,7 +16,30 @@
             ]
         },
         {
-            "id":"103",
+            "id":"102",
+            "titleName":"购买情况",
+            "path":"shaping",
+            "icon":"el-icon-reading",
+            "children":[
+                {
+                    "id":"001",
+                    "titleName":"按教师查询",
+                    "path":"teaList",
+                    "children":[]
+                },
+                {
+                    "id":"002",
+                    "titleName":"按图书查询",
+                    "path":"booksList",
+                    "children":[]
+                }
+            ]
+            
+        }
+    ],
+    "menujs":[
+        {
+            "id":"101",
             "titleName":"图书管理",
             "path":"booksAdmin",
             "icon":"el-icon-reading",
@@ -61,76 +52,93 @@
                 }
             ]
         }
-    ], "users":[
+    ],
+    "menusd":[
+        {
+            "id":"101",
+            "titleName":"图书管理",
+            "path":"booksAdmin",
+            "icon":"el-icon-reading",
+            "children":[
+                {
+                    "id":"001",
+                    "titleName":"图书列表",
+                    "path":"bookList",
+                    "children":[]
+                }
+            ]
+        }
+    ],
+     "users":[
                 {
                     "id":"500",
-                    "username":"小张",
-                    "rolename":"超级管理员",
-                    "userrole":"admin-svip",
-                    "email":"38956353@qq.com",
+                    "name":"小张",
+                    "password":"1",
+                    "number":"1",
+                    "shenfen":"管理员",
                     "now":true,
                     "token":"Fh9HF_JKSKFJ6SsdfKgO9SDFGLKE_R2YFGfSDI_DOFGSfDHFfgbd_OGUdfDGREUI_T8LFHSDdsKGfNXMfBFGSD_1Ih"
-                }, {
-                    "id":"284",
-                    "username":"李刚",
-                    "rolename":"普通管理员",
-                    "userrole":"admin-vip",
-                    "email":"67357636@qq.com",
-                    "now":false,
-                    "token":"fKgDGREUI_T8LFHSDdsO9SDFGL_OFGSfDHFfgbdFh9HF_JKE_R2YFGfSDI_KSKFJ6SsdGfNXMfBFOGUdfKD_hs"
-                }, {
-                    "id":"835",
-                    "username":"翠花",
-                    "rolename":"超级管理员",
-                    "userrole":"admin-svip",
-                    "email":"4527653@qq.com",
+                },{
+                    "id":"50",
+                    "name":"李四",
+                    "password":"2",
+                    "number":"2",
+                    "shenfen":"教师",
                     "now":true,
-                    "token":"FgO9SDFGLKE_R2YFGfSDI_DOFGSfDHFfh9HF_JKSKFJ6SsdfKgbd_OGUdfDGREUI_T8LFHSDdsKGfNXMfBFGSD_1Ih"
-                }, {
-                    "id":"284",
-                    "username":"王兰",
-                    "rolename":"普通用户",
-                    "userrole":"admin-vip",
-                    "email":"62367831@qq.com",
-                    "now":false,
-                    "token":"_R2YFGfSDI_KSKFJ6SsdGfNXMfBFOGUdfKgO9SDFGL_OFGSfDHFfgbdFh9HF_JKEfDGREUI_T8LFHSDdsKD_hs"
+                    "token":"Fh9HF_JKSKFJ6SsdfKgO9SDFGLKE_R2YFGfSDI_DOFGSfDHFfgbd_OGUdfDGREUI_T8LFHSDdsKGfNXMfBFGSD_1Ih"
+                },{
+                    "id":"5320",
+                    "name":"王亚",
+                    "password":"3",
+                    "number":"3",
+                    "shenfen":"书店",
+                    "now":true,
+                    "token":"Fh9HF_JKSKFJ6SsdfKgO9SDFGLKE_R2YFGfSDI_DOFGSfDHFfgbd_OGUdfDGREUI_T8LFHSDdsKGfNXMfBFGSD_1Ih"
+                },{
+                    "id":"500",
+                    "name":"董思",
+                    "password":"4",
+                    "number":"4",
+                    "shenfen":"管理员",
+                    "now":true,
+                    "token":"Fh9HF_JKSKFJ6SsdfKgO9SDFGLKE_R2YFGfSDI_DOFGSfDHFfgbd_OGUdfDGREUI_T8LFHSDdsKGfNXMfBFGSD_1Ih"
                 }
     ],
     "title":{"number":"序号","title":"书名","name":"作者","price":"价格","shoping":"购买"},
     "books":[
-        { "id": "001", "title": "巴黎圣母院" , "name": "雨果", "price": "51" ,"number":"0"},
-        { "id": "002", "title": "钢铁是怎样炼成的" , "name": "尼古拉·奥斯特洛夫斯基" , "price": "23","number":"0"},
-        { "id": "003", "title": "鲁滨逊漂流记" , "name": "笛福" , "price": "26" ,"number":"0"},
-        { "id": "004", "title": "格列佛游记", "name": "乔纳森·斯威夫待" , "price": "43" ,"number":"0"},
-        { "id": "005", "title": "繁星.春水" , "name": "冰心", "price": "45" ,"number":"0"},
-        { "id": "006", "title": "朝花夕拾" , "name": "鲁迅" , "price": "90" ,"number":"0"},
-        { "id": "007", "title": "水浒传" , "name": "施耐庵", "price": "83" ,"number":"0"},
-        { "id": "008", "title": "骆驼祥子" , "name": "老舍", "price": "11" ,"number":"0"},
-        { "id": "009", "title": "名人传" , "name": "瓦萨里" , "price": "24" ,"number":"0"},
-        { "id": "010", "title": "昆虫记" , "name": "法布尔", "price": "19" ,"number":"0"},
-        { "id": "011", "title": "假如给我三天光明", "name": "海伦•凯勒" , "price": "41" ,"number":"0"},
-        { "id": "012", "title": "寄小读者", "name": "冰心" , "price": "66" ,"number":"0"},
-        { "id": "013", "title": "寄小读者", "name": "冰心" , "price": "66" ,"number":"0"},
-        { "id": "014", "title": "寄小读者", "name": "冰心" , "price": "66","number":"0" },
-        { "id": "015", "title": "寄小读者", "name": "冰心" , "price": "66" ,"number":"0"},
-        { "id": "016", "title": "寄小读者", "name": "冰心" , "price": "66" ,"number":"0"},
-        { "id": "017", "title": "寄小读者", "name": "冰心" , "price": "66" ,"number":"0"},
-        { "id": "018", "title": "寄小读者", "name": "冰心" , "price": "66" ,"number":"0"},
-        { "id": "019", "title": "寄小读者", "name": "冰心" , "price": "66","number":"0" },
-        { "id": "020", "title": "寄小读者", "name": "冰心" , "price": "66","number":"0" },
-        { "id": "021", "title": "寄小读者", "name": "冰心" , "price": "66" ,"number":"0"},
-        { "id": "022", "title": "寄小读者", "name": "冰心" , "price": "66" ,"number":"0"},
-        { "id": "023", "title": "寄小读者", "name": "冰心" , "price": "66","number":"0" },
-        { "id": "024", "title": "寄小读者", "name": "冰心" , "price": "66" ,"number":"0"},
-        { "id": "025", "title": "寄小读者", "name": "冰心" , "price": "66","number":"0" },
-        { "id": "026", "title": "寄小读者", "name": "冰心" , "price": "66" ,"number":"0"},
-        { "id": "027", "title": "寄小读者", "name": "冰心" , "price": "66" ,"number":"0"},
-        { "id": "028", "title": "寄小读者", "name": "冰心" , "price": "66" ,"number":"0"},
-        { "id": "029", "title": "寄小读者", "name": "冰心" , "price": "66","number":"0" },
-        { "id": "030", "title": "寄小读者", "name": "冰心" , "price": "66" ,"number":"0"},
-        { "id": "031", "title": "寄小读者", "name": "冰心" , "price": "66","number":"0" },
-        { "id": "032", "title": "寄小读者", "name": "冰心" , "price": "66","number":"0" },
-        { "id": "033", "title": "寄小读者", "name": "冰心" , "price": "66" ,"number":"0"}
+        { "shuliang": "001", "name": "巴黎圣母院" , "zuozhe": "雨果", "money": "51" ,"chubanshe":"0"},
+        { "shuliang": "002", "name": "钢铁是怎样炼成的" , "zuozhe": "尼古拉·奥斯特洛夫斯基" , "money": "23","chubanshe":"0"},
+        { "shuliang": "003", "name": "鲁滨逊漂流记" , "zuozhe": "笛福" , "money": "26" ,"chubanshe":"0"},
+        { "shuliang": "004", "name": "格列佛游记", "zuozhe": "乔纳森·斯威夫待" , "money": "43" ,"chubanshe":"0"},
+        { "shuliang": "005", "name": "繁星.春水" , "zuozhe": "冰心", "money": "45" ,"chubanshe":"0"},
+        { "shuliang": "006", "name": "朝花夕拾" , "zuozhe": "鲁迅" , "money": "90" ,"chubanshe":"0"},
+        { "shuliang": "007", "name": "水浒传" , "zuozhe": "施耐庵", "money": "83" ,"chubanshe":"0"},
+        { "shuliang": "008", "name": "骆驼祥子" , "zuozhe": "老舍", "money": "11" ,"chubanshe":"0"},
+        { "shuliang": "009", "name": "名人传" , "zuozhe": "瓦萨里" , "money": "24" ,"chubanshe":"0"},
+        { "shuliang": "010", "name": "昆虫记" , "zuozhe": "法布尔", "money": "19" ,"chubanshe":"0"},
+        { "shuliang": "011", "name": "假如给我三天光明", "zuozhe": "海伦•凯勒" , "money": "41" ,"chubanshe":"0"},
+        { "shuliang": "012", "name": "寄小读者", "zuozhe": "冰心" , "money": "66" ,"chubanshe":"0"},
+        { "shuliang": "013", "name": "寄小读者", "zuozhe": "冰心" , "money": "66" ,"chubanshe":"0"},
+        { "shuliang": "014", "name": "寄小读者", "zuozhe": "冰心" , "money": "66","chubanshe":"0" },
+        { "shuliang": "015", "name": "寄小读者", "zuozhe": "冰心" , "money": "66" ,"chubanshe":"0"},
+        { "shuliang": "016", "name": "寄小读者", "zuozhe": "冰心" , "money": "66" ,"chubanshe":"0"},
+        { "shuliang": "017", "name": "寄小读者", "zuozhe": "冰心" , "money": "66" ,"chubanshe":"0"},
+        { "shuliang": "018", "name": "寄小读者", "zuozhe": "冰心" , "money": "66" ,"chubanshe":"0"},
+        { "shuliang": "019", "name": "寄小读者", "zuozhe": "冰心" , "money": "66","chubanshe":"0" },
+        { "shuliang": "020", "name": "寄小读者", "zuozhe": "冰心" , "money": "66","chubanshe":"0" },
+        { "shuliang": "021", "name": "寄小读者", "zuozhe": "冰心" , "money": "66" ,"chubanshe":"0"},
+        { "shuliang": "022", "name": "寄小读者", "zuozhe": "冰心" , "money": "66" ,"chubanshe":"0"},
+        { "shuliang": "023", "name": "寄小读者", "zuozhe": "冰心" , "money": "66","chubanshe":"0" },
+        { "shuliang": "024", "name": "寄小读者", "zuozhe": "冰心" , "money": "66" ,"chubanshe":"0"},
+        { "shuliang": "025", "name": "寄小读者", "zuozhe": "冰心" , "money": "66","chubanshe":"0" },
+        { "shuliang": "026", "name": "寄小读者", "zuozhe": "冰心" , "money": "66" ,"chubanshe":"0"},
+        { "shuliang": "027", "name": "寄小读者", "zuozhe": "冰心" , "money": "66" ,"chubanshe":"0"},
+        { "shuliang": "028", "name": "寄小读者", "zuozhe": "冰心" , "money": "66" ,"chubanshe":"0"},
+        { "shuliang": "029", "name": "寄小读者", "zuozhe": "冰心" , "money": "66","chubanshe":"0" },
+        { "shuliang": "030", "name": "寄小读者", "zuozhe": "冰心" , "money": "66" ,"chubanshe":"0"},
+        { "shuliang": "031", "name": "寄小读者", "zuozhe": "冰心" , "money": "66","chubanshe":"0" },
+        { "shuliang": "032", "name": "寄小读者", "zuozhe": "冰心" , "money": "66","chubanshe":"0" },
+        { "shuliang": "033", "name": "寄小读者", "zuozhe": "冰心" , "money": "66" ,"chubanshe":"0"}
      ]
     }
 }

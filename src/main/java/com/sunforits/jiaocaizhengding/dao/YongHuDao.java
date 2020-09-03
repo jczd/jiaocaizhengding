@@ -16,7 +16,7 @@ import java.util.List;
 public interface YongHuDao {
 
     @Select("select * from yonghu where number = #{number}")
-    public YongHu DengLu(Integer number);
+    public YongHu DengLu(String number);
 
     @Insert("insert into yonghu (name,password,number,shenfen,xueyuan) values (#{name},#{password},#{number},#{shenfen},#{xueyuan})")
     public void saveYongHu(YongHu yongHu);
@@ -27,6 +27,6 @@ public interface YongHuDao {
     @Select("select * from yonghu where name=#{name} and password=#{password}")
     public YongHu findByNP(YongHu yongHu);
 
-    @Select("select * from yonghu")
+    @Select("select * from yonghu order by uid desc")
     public List<YongHu> findAll();
 }

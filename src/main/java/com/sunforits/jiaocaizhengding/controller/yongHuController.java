@@ -5,6 +5,7 @@ import com.sunforits.jiaocaizhengding.entity.YongHu;
 import com.sunforits.jiaocaizhengding.service.TeacherService;
 import com.sunforits.jiaocaizhengding.service.YongHuService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,7 +40,8 @@ public class yongHuController {
         map.clear();
         System.out.println(yongHu);
 
-        YongHu p = yongHuService.DengLu(yongHu.getName());
+        YongHu p = yongHuService.DengLu(yongHu.getNumber());
+        System.out.println(p);
 
         if (p.getPassword().equals(yongHu.getPassword())) {
             map.put("user", p);
