@@ -1,10 +1,7 @@
 package com.sunforits.jiaocaizhengding.dao;
 
 import com.sunforits.jiaocaizhengding.entity.YongHu;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -29,4 +26,7 @@ public interface YongHuDao {
 
     @Select("select * from yonghu order by uid desc")
     public List<YongHu> findAll();
+
+    @Update("update yonghu set name=${name},password=#{password},number=${number},shenfen=${shenfen},xueyuan=${xueyuan} where uid=${uid}")
+    void updateOne(YongHu yongHu);
 }

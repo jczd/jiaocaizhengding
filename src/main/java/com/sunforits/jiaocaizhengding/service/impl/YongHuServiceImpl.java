@@ -28,13 +28,12 @@ public class YongHuServiceImpl implements YongHuService {
     @Override
     public void saveYongHu(YongHu yongHu) {
 
-
         yongHuDao.saveYongHu(yongHu);
     }
 
     @Override
-    public void deleteUser(Integer id) {
-        yongHuDao.deleteUser(id);
+    public void deleteUser(Integer uid) {
+        yongHuDao.deleteUser(uid);
     }
 
     @Override
@@ -47,6 +46,11 @@ public class YongHuServiceImpl implements YongHuService {
     public List<YongHu> findAll() {
         List<YongHu> all = yongHuDao.findAll();
         return all;
+    }
+
+    @Override
+    public void updateUser(YongHu yongHu) {
+        yongHuDao.updateOne(yongHu);
     }
 
 

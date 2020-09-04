@@ -9,15 +9,16 @@ import java.util.List;
  */
 public interface YongHuService {
 
-    public YongHu DengLu(String number);
+    YongHu DengLu(String number);
 
-    public void saveYongHu(YongHu yongHu);
+    void saveYongHu(YongHu yongHu);
 
-    public void deleteUser(Integer id);
+    void deleteUser(Integer id);
 
-    public YongHu findByNP(YongHu yongHu);
+    YongHu findByNP(YongHu yongHu);
 
-    public List<YongHu> findAll();
+    List<YongHu> findAll();
 
+    void updateUser(YongHu yongHu);
 
 }

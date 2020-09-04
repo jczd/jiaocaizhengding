@@ -58,66 +58,6 @@ public class schoolController {
         return map;
     }
 
-    //查看所有用户
-    @RequestMapping("/yonghufindall")
-    public Map<String, Object> yonghufindall() {
-        map.clear();
-
-        List<YongHu> all = null;
-        try {
-            all = yongHuService.findAll();
-            map.put("code", 1);
-            map.put("yonghulist", all);
-
-        } catch (Exception e) {
-            map.put("code", 2);
-        }
-        System.out.println(map);
-        return map;
-    }
-
-    //删除用户
-    @RequestMapping("/yonghudelete")
-    public Map<String, Object> yonghudelete(int id) {
-        map.clear();
-        System.out.println(id);
-
-        try {
-            yongHuService.deleteUser(id);
-            map.put("code", 1);
-        } catch (Exception e) {
-            map.put("code", 2);
-        }
-
-        //return all;
-        return map;
-    }
-
-    //增加用户
-    @RequestMapping("/yonghusave")
-    public Map<String, Object> yonghusave(YongHu yongHu) {
-        map.clear();
-        System.out.println(yongHu);
-
-        try {
-            if (yongHu.getShenfen() == "teacher") {
-                Teacher teacher = new Teacher();
-                teacher.setName(yongHu.getName());
-                teacher.setXueyuan(yongHu.getXueyuan());
-                teacherService.saveTeacher(teacher);
-            }
-
-            yongHuService.saveYongHu(yongHu);
-
-            map.put("code", 1);
-        } catch (Exception e) {
-            map.put("code", 2);
-        }
-
-        return map;
-    }
-
-
     //学校根据老师名字，书籍名字，查看总表
     @RequestMapping("/teacherfind")
     public Map<String, Object> teacherfind() {

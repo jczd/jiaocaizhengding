@@ -5,8 +5,7 @@ import com.sunforits.jiaocaizhengding.entity.YongHu;
 import com.sunforits.jiaocaizhengding.service.TeacherService;
 import com.sunforits.jiaocaizhengding.service.YongHuService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -57,7 +56,7 @@ public class yongHuController {
      * 注册案例,如果是老师，把老师表注册了
      * */
     @RequestMapping("/saveYonghur")
-    public Map<String, Object> saveTeacher( YongHu yongHu) {
+    public Map<String, Object> saveTeacher(YongHu yongHu) {
         map.clear();
         System.out.println(yongHu);
 
@@ -73,18 +72,59 @@ public class yongHuController {
         } catch (Exception e) {
             map.put("code", 2);
         }
+
         return map;
     }
 
+    // 查询出所有用户
     @RequestMapping("/findAll")
     public Map<String, Object> findAll() {
         map.clear();
 
-        List<YongHu> list = yongHuService.findAll();
-        System.out.println(list);
+        List<YongHu> list = null;
+        try {
+            list = yongHuService.findAll();
+            map.put("code", 1);
+            map.put("yonghulist", list);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        map.put("list", list);
+
         System.out.println(map);
+        return map;
+    }
+
+    // 修改用户信息
+    @RequestMapping("/updateyonghu")
+    public Map<String, Object> yonghuupdate(YongHu yongHu) {
+        map.clear();
+        System.out.println(yongHu);
+
+        try {
+            yongHuService.updateUser(yongHu);
+            map.put("code", 1);
+        } catch (Exception e) {
+            map.put("code", 2);
+        }
+
+        return map;
+    }
+
+    //删除用户
+    @RequestMapping("/yonghudelete")
+    public Map<String, Object> yonghudelete(int uid) {
+        map.clear();
+        System.out.println(uid);
+
+        try {
+            yongHuService.deleteUser(uid);
+            map.put("code", 1);
+        } catch (Exception e) {
+            map.put("code", 2);
+        }
+
+        //return all;
         return map;
     }
 

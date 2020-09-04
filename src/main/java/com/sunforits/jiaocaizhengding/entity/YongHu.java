@@ -9,6 +9,7 @@ import java.io.Serializable;
  */
 @Data
 public class YongHu implements Serializable {
+    private Integer uid;
     private String name;
     private String password;
     private String number;
