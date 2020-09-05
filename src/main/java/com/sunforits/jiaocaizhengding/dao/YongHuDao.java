@@ -14,7 +14,7 @@ import java.util.List;
 @Mapper
 public interface YongHuDao {
 
-    @Select("select * from yonghu where number = ${number}")
+    @Select("select * from yonghu where number = '${number}';")
     public YongHu DengLu(String number);
 
     @Insert("insert into yonghu (uid,name,password,number,shenfen,bumen) values ('${uid}','${name}','${password}',${number},'${shenfen}','${bumen}')")
