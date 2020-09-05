@@ -1,8 +1,6 @@
 package com.sunforits.jiaocaizhengding.controller;
 
-import com.sunforits.jiaocaizhengding.entity.Teacher;
 import com.sunforits.jiaocaizhengding.entity.YongHu;
-import com.sunforits.jiaocaizhengding.service.TeacherService;
 import com.sunforits.jiaocaizhengding.service.YongHuService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -24,8 +22,6 @@ public class yongHuController {
     @Autowired
     private YongHuService yongHuService;
 
-    @Autowired
-    private TeacherService teacherService;
 
     Map<String, Object> map = new HashMap<>();
 
@@ -61,12 +57,7 @@ public class yongHuController {
         System.out.println(yongHu);
 
         try {
-            if (yongHu.getShenfen().equals("老师")) {
-                Teacher teacher = new Teacher();
-                teacher.setName(yongHu.getName());
-                teacher.setXueyuan(yongHu.getXueyuan());
-                teacherService.saveTeacher(teacher);
-            }
+
             yongHuService.saveYongHu(yongHu);
             map.put("code", 1);
         } catch (Exception e) {

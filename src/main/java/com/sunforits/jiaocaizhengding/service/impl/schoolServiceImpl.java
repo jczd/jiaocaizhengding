@@ -1,8 +1,8 @@
 package com.sunforits.jiaocaizhengding.service.impl;
 
 import com.sunforits.jiaocaizhengding.dao.SchoolDao;
-import com.sunforits.jiaocaizhengding.entity.BookChaXun;
-import com.sunforits.jiaocaizhengding.entity.TeacherChaXun;
+import com.sunforits.jiaocaizhengding.entity.Book;
+import com.sunforits.jiaocaizhengding.entity.YongHu;
 import com.sunforits.jiaocaizhengding.service.schoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,14 +20,14 @@ public class schoolServiceImpl implements schoolService {
     private SchoolDao schoolDao;
 
     @Override
-    public List<BookChaXun> bookFind() {
-        List<BookChaXun> bookfind = schoolDao.bookfind();
+    public List<Book> bookFind() {
+        List<Book> bookfind = schoolDao.bookfind();
         return bookfind;
     }
 
     @Override
-    public List<TeacherChaXun> teacherFind() {
-        List<TeacherChaXun> teacherfind = schoolDao.teacherfind();
+    public List<YongHu> teacherFind() {
+        List<YongHu> teacherfind = schoolDao.teacherfind();
         return teacherfind;
     }
 }

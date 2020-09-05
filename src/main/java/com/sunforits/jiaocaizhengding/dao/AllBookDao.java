@@ -1,14 +1,15 @@
 package com.sunforits.jiaocaizhengding.dao;
 
-import com.sunforits.jiaocaizhengding.entity.allBook;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+        import com.sunforits.jiaocaizhengding.entity.allBook;
+        import org.apache.ibatis.annotations.Delete;
+        import org.apache.ibatis.annotations.Insert;
+        import org.apache.ibatis.annotations.Mapper;
+        import org.apache.ibatis.annotations.Select;
 
-import java.util.List;
+        import java.util.List;
 
 /**
+ * 订单的增删改查
  * @date 2020/5/17-17:10
  */
 @Mapper

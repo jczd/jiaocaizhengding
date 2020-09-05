@@ -1,7 +1,7 @@
 package com.sunforits.jiaocaizhengding.service;
 
-import com.sunforits.jiaocaizhengding.entity.BookChaXun;
-import com.sunforits.jiaocaizhengding.entity.TeacherChaXun;
+import com.sunforits.jiaocaizhengding.entity.Book;
+import com.sunforits.jiaocaizhengding.entity.YongHu;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface schoolService {
 
-    public List<BookChaXun> bookFind();
+    public List<Book> bookFind();
 
-    public List<TeacherChaXun> teacherFind();
+    public List<YongHu> teacherFind();
 }

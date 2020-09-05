@@ -3,7 +3,6 @@ package com.sunforits.jiaocaizhengding.controller;
 
 import com.sunforits.jiaocaizhengding.entity.*;
 import com.sunforits.jiaocaizhengding.service.BookService;
-import com.sunforits.jiaocaizhengding.service.TeacherService;
 import com.sunforits.jiaocaizhengding.service.YongHuService;
 import com.sunforits.jiaocaizhengding.service.schoolService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +32,6 @@ public class schoolController {
     @Autowired
     private YongHuService yongHuService;
     @Autowired
-    private TeacherService teacherService;
-    @Autowired
     private schoolService schoolService;
 
     Map<String, Object> map = new HashMap<>();
@@ -63,7 +60,7 @@ public class schoolController {
     public Map<String, Object> teacherfind() {
         map.clear();
 
-        List<TeacherChaXun> teacherChaXuns = null;
+        List<YongHu> teacherChaXuns = null;
         try {
             teacherChaXuns = schoolService.teacherFind();
             map.put("code", 1);
@@ -79,7 +76,7 @@ public class schoolController {
     public Map<String, Object> bookfind() {
         map.clear();
 
-        List<BookChaXun> bookChaXuns = null;
+        List<Book> bookChaXuns = null;
         try {
             bookChaXuns = schoolService.bookFind();
             map.put("code", 1);
