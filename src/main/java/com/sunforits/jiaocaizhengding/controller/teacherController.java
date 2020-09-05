@@ -86,11 +86,11 @@ public class teacherController {
         return map;
     }
 
-//    /*
-//     * 删除书籍
-//     * */
-//    @RequestMapping("/allbook/teacherdeletebook")
-//    public Map<String, Object> teacherdeletebook(allBook allBook) {
+    /*
+     * 删除添加的书籍
+     * */
+    @RequestMapping("/allbook/teacherdeletebook")
+    public Map<String, Object> teacherdeletebook(allBook allBook) {
 //        map.clear();
 //        System.out.println(allBook);
 //
@@ -100,8 +100,8 @@ public class teacherController {
 //        } catch (Exception e) {
 //            map.put("code", 2);
 //        }
-//        return map;
-//    }
+        return map;
+    }
 
 
 }
