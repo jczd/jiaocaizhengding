@@ -7,11 +7,7 @@ import lombok.Data;
  */
 @Data
 public class allBook {
-
-    private String book;
-    private String shuliang;
-    private String chubanshe;
-    private String zuozhe;
-    private String teacher;
-
+    private String uid;
+    private String bid;
+    private Integer shuliang;
 }

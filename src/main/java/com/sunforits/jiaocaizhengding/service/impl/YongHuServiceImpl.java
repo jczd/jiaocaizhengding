@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @date 2020/5/11-11:18
@@ -27,6 +28,14 @@ public class YongHuServiceImpl implements YongHuService {
 
     @Override
     public void saveYongHu(YongHu yongHu) {
+        if (yongHu.getUid() == null || yongHu.getUid().equals("")) {    // 设置UUID
+            yongHu.setUid(UUID.randomUUID().toString());
+            System.out.println(yongHu.getUid());
+        }
+        if(yongHu.getPassword()==null|| yongHu.getPassword().equals("")){   // 设置初始密码
+            yongHu.setPassword("666666");
+        }
+        System.out.println(yongHu);
 
         yongHuDao.saveYongHu(yongHu);
     }

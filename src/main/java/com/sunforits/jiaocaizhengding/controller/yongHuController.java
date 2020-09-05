@@ -55,9 +55,7 @@ public class yongHuController {
     public Map<String, Object> saveTeacher(YongHu yongHu) {
         map.clear();
         System.out.println(yongHu);
-
         try {
-
             yongHuService.saveYongHu(yongHu);
             map.put("code", 1);
         } catch (Exception e) {

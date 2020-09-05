@@ -5,8 +5,8 @@ import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
-/**
- * 用户管理
+    /**
+     * 用户管理
  * @date 2020/5/11-11:21
  */
 
@@ -16,7 +16,7 @@ public interface YongHuDao {
     @Select("select * from yonghu where number = #{number}")
     public YongHu DengLu(String number);
 
-    @Insert("insert into yonghu (name,password,number,shenfen,xueyuan) values (#{name},#{password},#{number},#{shenfen},#{xueyuan})")
+    @Insert("insert into yonghu (uid,name,password,number,shenfen,bumen) values ('${uid}','${name}','${password}',${number},'${shenfen}','${bumen}')")
     public void saveYongHu(YongHu yongHu);
 
     @Delete("delete from yonghu where uid = #{uid}")

@@ -86,22 +86,22 @@ public class teacherController {
         return map;
     }
 
-    /*
-     * 删除书籍
-     * */
-    @RequestMapping("/allbook/teacherdeletebook")
-    public Map<String, Object> teacherdeletebook(allBook allBook) {
-        map.clear();
-        System.out.println(allBook);
-
-        try {
-            allBookService.teacherDeleteBook(allBook.getBook(), allBook.getTeacher());
-            map.put("code", 1);
-        } catch (Exception e) {
-            map.put("code", 2);
-        }
-        return map;
-    }
+//    /*
+//     * 删除书籍
+//     * */
+//    @RequestMapping("/allbook/teacherdeletebook")
+//    public Map<String, Object> teacherdeletebook(allBook allBook) {
+//        map.clear();
+//        System.out.println(allBook);
+//
+//        try {
+//            allBookService.teacherDeleteBook(allBook.getBook(), allBook.getTeacher());
+//            map.put("code", 1);
+//        } catch (Exception e) {
+//            map.put("code", 2);
+//        }
+//        return map;
+//    }
 
 
 }

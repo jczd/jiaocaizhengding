@@ -94,7 +94,7 @@ public class storeController {
         map.clear();
 
 
-        List<BookChaXun> bookChaXuns = null;
+        List bookChaXuns = null;
         try {
             bookChaXuns = schoolService.bookFind();
             map.put("code", 1);
