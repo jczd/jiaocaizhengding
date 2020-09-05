@@ -15,5 +15,5 @@ public interface BookService {
 
     public void saveBook(Book book);
 
-    public void deleteBook(String name);
+    public void deleteBook(Integer bid);
 }
