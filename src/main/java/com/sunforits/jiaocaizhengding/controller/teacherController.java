@@ -1,7 +1,7 @@
 package com.sunforits.jiaocaizhengding.controller;
 
 import com.sunforits.jiaocaizhengding.entity.Book;
-import com.sunforits.jiaocaizhengding.entity.allBook;
+import com.sunforits.jiaocaizhengding.entity.AllBook;
 import com.sunforits.jiaocaizhengding.service.AllBookService;
 import com.sunforits.jiaocaizhengding.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +39,7 @@ public class teacherController {
         List<Book> all = bookService.findAll();
         System.out.println(all);
 
-        map.put("list", all);
+        map.put("booklist", all);
         map.put("code", 1);
 
         System.out.println(map);
@@ -50,7 +50,7 @@ public class teacherController {
      * 在allbook书单里添加书籍
      * */
     @RequestMapping("/allbook/savebook")
-    public Map<String, Object> saveBook(allBook allBook) {
+    public Map<String, Object> saveBook(AllBook allBook) {
         map.clear();
         System.out.println(allBook);
 
@@ -58,7 +58,6 @@ public class teacherController {
             allBookService.allSaveBook(allBook);
             map.put("code", 1);
         } catch (Exception e) {
-
             map.put("code", 2);
         }
 
@@ -73,16 +72,25 @@ public class teacherController {
         map.clear();
         System.out.println(teachername);
 
-        List<allBook> allBooks = null;
+        List<AllBook> AllBooks = null;
         try {
-            allBooks = allBookService.allFindOne(teachername);
+            AllBooks = allBookService.allFindOne(teachername);
             map.put("code", 1);
         } catch (Exception e) {
             map.put("code", 2);
         }
 
-        System.out.println(allBooks);
+        System.out.println(AllBooks);
         System.out.println(map);
+        return map;
+    }
+
+    /*
+     * 修改添加的订单信息
+     * */
+    @RequestMapping("/allbook/updateone")
+    public Map<String, Object> updateAllbookOne(AllBook allBook) {
+        map.clear();
         return map;
     }
 
@@ -90,8 +98,8 @@ public class teacherController {
      * 删除添加的书籍
      * */
     @RequestMapping("/allbook/teacherdeletebook")
-    public Map<String, Object> teacherdeletebook(allBook allBook) {
-//        map.clear();
+    public Map<String, Object> teacherdeletebook(AllBook allBook) {
+        map.clear();
 //        System.out.println(allBook);
 //
 //        try {

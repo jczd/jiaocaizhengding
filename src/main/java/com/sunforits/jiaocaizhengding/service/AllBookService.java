@@ -1,6 +1,6 @@
 package com.sunforits.jiaocaizhengding.service;
 
-import com.sunforits.jiaocaizhengding.entity.allBook;
+import com.sunforits.jiaocaizhengding.entity.AllBook;
 
 import java.util.List;
 
@@ -9,12 +9,12 @@ import java.util.List;
  */
 public interface AllBookService {
 
-    public List<allBook> allFindOne(String name);
+    public List<AllBook> allFindOne(String name);
 
-    public List<allBook> allFindAll();
+    public List<AllBook> allFindAll();
 
 
-    public void allSaveBook(allBook allBook);
+    public void allSaveBook(AllBook allBook);
 
     public void allDeleteBook(String name);
 

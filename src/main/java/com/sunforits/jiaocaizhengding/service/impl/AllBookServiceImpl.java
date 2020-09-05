@@ -1,11 +1,13 @@
 package com.sunforits.jiaocaizhengding.service.impl;
 
 import com.sunforits.jiaocaizhengding.dao.AllBookDao;
-import com.sunforits.jiaocaizhengding.entity.allBook;
+import com.sunforits.jiaocaizhengding.entity.AllBook;
 import com.sunforits.jiaocaizhengding.service.AllBookService;
+import com.sunforits.jiaocaizhengding.utils.DateTime.StringTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -19,19 +21,24 @@ public class AllBookServiceImpl implements AllBookService {
     AllBookDao allBookDao;
 
     @Override
-    public List<allBook> allFindOne(String name) {
-        List<allBook> allBook = allBookDao.allFindOne(name);
+    public List<AllBook> allFindOne(String name) {
+        List<AllBook> allBook = allBookDao.allFindOne(name);
         return allBook;
     }
 
     @Override
-    public List<allBook> allFindAll() {
-        List<allBook> allBooks = allBookDao.allFindAll();
-        return allBooks;
+    public List<AllBook> allFindAll() {
+        List<AllBook> AllBooks = allBookDao.allFindAll();
+        return AllBooks;
     }
 
     @Override
-    public void allSaveBook(allBook allBook) {
+    public void allSaveBook(AllBook allBook) {
+        if (allBook.getStart() == null || allBook.getStart().equals("")) {   // 设置订单创建时间
+            allBook.setStart(StringTime.getStringTime());
+
+        }
+
         allBookDao.allSaveBook(allBook);
     }
 
@@ -43,7 +50,7 @@ public class AllBookServiceImpl implements AllBookService {
 
 
     @Override
-    public void teacherDeleteBook(String book,String teacher){
-        allBookDao.teacherDeleteBook(book,teacher);
+    public void teacherDeleteBook(String book, String teacher) {
+        allBookDao.teacherDeleteBook(book, teacher);
     }
 }

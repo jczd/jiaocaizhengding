@@ -6,7 +6,7 @@ import lombok.Data;
  * @date 2020/5/17-17:04
  */
 @Data
-public class allBook {
+public class AllBook {
     private String uid; // 用户id
     private String bid; // 书id
     private Integer shuliang;   // 需要的书籍数量
