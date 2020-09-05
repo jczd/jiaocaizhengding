@@ -39,4 +39,9 @@ public class BookServiceImpl implements BookService {
     public void deleteBook(Integer bid) {
         bookDao.deleteBook(bid);
     }
+
+    @Override
+    public void updateBook(Book book) {
+        bookDao.updateBook(book);
+    }
 }

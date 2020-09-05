@@ -28,7 +28,7 @@ public class storeController {
     Map<String, Object> map = new HashMap<>();
 
     /*
-     * 对发布的书单1进行增删改查。
+     * 对发布的书单book进行增删改查。
      * */
     @RequestMapping("/book/savebook")
     public Map<String, Object> saveBook1(Book book) {
@@ -51,6 +51,20 @@ public class storeController {
 
         try {
             bookService.deleteBook(bid);
+            map.put("code", 1);
+        } catch (Exception e) {
+            map.put("code", 2);
+        }
+        return map;
+    }
+
+    @RequestMapping("/book/updatebook")
+    public Map<String, Object> updatebook1(Book book) {
+        map.clear();
+        System.out.println(book);
+
+        try {
+            bookService.updateBook(book);
             map.put("code", 1);
         } catch (Exception e) {
             map.put("code", 2);
@@ -87,7 +101,7 @@ public class storeController {
 
 
     /*
-     * 得到最后的总数单：
+     * 查看得到最后的总数单：
      * */
     @RequestMapping("/bookfind")
     public Map<String, Object> bookfind() {
