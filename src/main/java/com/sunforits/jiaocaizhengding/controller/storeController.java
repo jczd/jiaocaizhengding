@@ -45,12 +45,12 @@ public class storeController {
     }
 
     @RequestMapping("/book/deletebook")
-    public Map<String, Object> deletebook1(Integer bid) {
+    public Map<String, Object> deletebook1(Book book) {
         map.clear();
-        System.out.println(bid);
+        System.out.println(book);
 
         try {
-            bookService.deleteBook(bid);
+            bookService.deleteBook(book);
             map.put("code", 1);
         } catch (Exception e) {
             map.put("code", 2);
@@ -76,13 +76,18 @@ public class storeController {
     public Map<String, Object> findAll() {
         map.clear();
 
-        List<Book> all = bookService.findAll();
+        List<Book> all = null;
+        try {
+            all = bookService.findAll();
+            map.put("code", 1);
+        } catch (Exception e) {
+            map.put("code", 2);
+        }
 
         System.out.println(all);
 
         map.put("list", all);
 
-        System.out.println(map);
         return map;
     }
 
@@ -91,7 +96,13 @@ public class storeController {
         map.clear();
         System.out.println(name);
 
-        Book one = bookService.findOne(name);
+        Book one = null;
+        try {
+            one = bookService.findOne(name);
+            map.put("code", 1);
+        } catch (Exception e) {
+            map.put("code", 2);
+        }
 
         map.put("book", one);
         System.out.println(map);
@@ -99,28 +110,6 @@ public class storeController {
         return map;
     }
 
-
-    /*
-     * 查看得到最后的总数单：
-     * */
-    @RequestMapping("/bookfind")
-    public Map<String, Object> bookfind() {
-        map.clear();
-
-
-        List bookChaXuns = null;
-        try {
-            bookChaXuns = schoolService.bookFind();
-            map.put("code", 1);
-            map.put("list", bookChaXuns);
-        } catch (Exception e) {
-            map.put("code", 2);
-        }
-
-        System.out.println(map);
-
-        return map;
-    }
 
 }
 

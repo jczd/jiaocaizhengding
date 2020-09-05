@@ -103,7 +103,7 @@ public class yongHuController {
 
     //删除用户
     @RequestMapping("/yonghudelete")
-    public Map<String, Object> yonghudelete(int uid) {
+    public Map<String, Object> yonghudelete(String uid) {
         map.clear();
         System.out.println(uid);
 

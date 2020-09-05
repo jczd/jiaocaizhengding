@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @date 2020/5/11-12:31
@@ -31,11 +32,14 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void saveBook(Book book) {
+        if (book.getBid() == null || book.getBid().equals("")) { // 设置bid
+            book.setBid(UUID.randomUUID().toString());
+        }
         bookDao.saveBook(book);
     }
 
     @Override
-    public void deleteBook(Integer bid) {
+    public void deleteBook(Book bid) {
         bookDao.deleteBook(bid);
     }
 

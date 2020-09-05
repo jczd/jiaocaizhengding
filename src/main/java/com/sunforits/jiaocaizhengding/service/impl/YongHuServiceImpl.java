@@ -41,7 +41,7 @@ public class YongHuServiceImpl implements YongHuService {
     }
 
     @Override
-    public void deleteUser(Integer uid) {
+    public void deleteUser(String uid) {
         yongHuDao.deleteUser(uid);
     }
 

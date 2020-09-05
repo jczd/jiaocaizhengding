@@ -17,5 +17,5 @@ public interface BookService {
 
     void updateBook(Book book);
 
-    void deleteBook(Integer bid);
+    void deleteBook(Book book);
 }
