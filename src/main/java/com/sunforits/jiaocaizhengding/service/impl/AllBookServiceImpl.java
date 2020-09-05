@@ -21,8 +21,8 @@ public class AllBookServiceImpl implements AllBookService {
     AllBookDao allBookDao;
 
     @Override
-    public List<AllBook> allFindOne(String name) {
-        List<AllBook> allBook = allBookDao.allFindOne(name);
+    public List<AllBook> allFindOne(String uid) {
+        List<AllBook> allBook = allBookDao.allFindOne(uid);
         return allBook;
     }
 
@@ -36,11 +36,16 @@ public class AllBookServiceImpl implements AllBookService {
     public void allSaveBook(AllBook allBook) {
         if (allBook.getStart() == null || allBook.getStart().equals("")) {   // 设置订单创建时间
             allBook.setStart(StringTime.getStringTime());
-
         }
-
+        allBook.setState("未完成");
         allBookDao.allSaveBook(allBook);
     }
+
+    @Override
+    public void allUpdateBook(AllBook allBook) {
+        allBookDao.allUpdateOne(allBook);
+    }
+
 
     @Override
     public void allDeleteBook(String name) {
@@ -50,7 +55,7 @@ public class AllBookServiceImpl implements AllBookService {
 
 
     @Override
-    public void teacherDeleteBook(String book, String teacher) {
-        allBookDao.teacherDeleteBook(book, teacher);
+    public void allDeleteOne(AllBook allBook) {
+        allBookDao.deleteOne(allBook);
     }
 }

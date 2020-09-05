@@ -9,14 +9,16 @@ import java.util.List;
  */
 public interface AllBookService {
 
-    public List<AllBook> allFindOne(String name);
+     List<AllBook> allFindOne(String name);
 
-    public List<AllBook> allFindAll();
+     List<AllBook> allFindAll();
 
 
-    public void allSaveBook(AllBook allBook);
+     void allSaveBook(AllBook allBook);
 
-    public void allDeleteBook(String name);
+    void allUpdateBook(AllBook allBook);
 
-    public void teacherDeleteBook(String book,String teacher);
+     void allDeleteBook(String name);
+
+     void allDeleteOne(AllBook allBook);
 }

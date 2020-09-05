@@ -68,13 +68,13 @@ public class teacherController {
      * 查看自己添加的书籍
      * */
     @RequestMapping("/allbook/teacherfindall")
-    public Map<String, Object> teacherfindall(String teachername) {
+    public Map<String, Object> teacherfindall(String uid) {
         map.clear();
-        System.out.println(teachername);
+        System.out.println(uid);
 
         List<AllBook> AllBooks = null;
         try {
-            AllBooks = allBookService.allFindOne(teachername);
+            AllBooks = allBookService.allFindOne(uid);
             map.put("code", 1);
         } catch (Exception e) {
             map.put("code", 2);
@@ -91,6 +91,14 @@ public class teacherController {
     @RequestMapping("/allbook/updateone")
     public Map<String, Object> updateAllbookOne(AllBook allBook) {
         map.clear();
+        System.out.println(allBook);
+
+        try {
+            allBookService.allUpdateBook(allBook);
+            map.put("code", 1);
+        } catch (Exception e) {
+            map.put("code", 2);
+        }
         return map;
     }
 
@@ -100,14 +108,15 @@ public class teacherController {
     @RequestMapping("/allbook/teacherdeletebook")
     public Map<String, Object> teacherdeletebook(AllBook allBook) {
         map.clear();
-//        System.out.println(allBook);
-//
-//        try {
-//            allBookService.teacherDeleteBook(allBook.getBook(), allBook.getTeacher());
-//            map.put("code", 1);
-//        } catch (Exception e) {
-//            map.put("code", 2);
-//        }
+        System.out.println(allBook);
+
+        try {
+            allBookService.allDeleteOne(allBook);
+            map.put("code", 1);
+        } catch (Exception e) {
+            map.put("code", 2);
+        }
+
         return map;
     }
 

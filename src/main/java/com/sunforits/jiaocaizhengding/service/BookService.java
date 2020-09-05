@@ -9,13 +9,13 @@ import java.util.List;
  */
 public interface BookService {
 
-    public Book findOne(String name);
+    Book findOne(String name);
 
-    public List<Book> findAll();
+    List<Book> findAll();
 
-    public void saveBook(Book book);
+    void saveBook(Book book);
 
-    public void updateBook(Book book);
+    void updateBook(Book book);
 
-    public void deleteBook(Integer bid);
+    void deleteBook(Integer bid);
 }

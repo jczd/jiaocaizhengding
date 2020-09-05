@@ -19,6 +19,11 @@ public class BookServiceImpl implements BookService {
     BookDao bookDao;
 
     @Override
+    public Book findOne(String name) {
+        return null;
+    }
+
+    @Override
     public List<Book> findAll() {
         List<Book> all = bookDao.findAll();
         return all;
