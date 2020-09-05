@@ -36,7 +36,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void deleteBook(String name) {
-        bookDao.deleteBook(name);
+    public void deleteBook(Integer bid) {
+        bookDao.deleteBook(bid);
     }
 }

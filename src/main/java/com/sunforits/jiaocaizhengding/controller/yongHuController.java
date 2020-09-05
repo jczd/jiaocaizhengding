@@ -91,6 +91,7 @@ public class yongHuController {
     public Map<String, Object> yonghuupdate(YongHu yongHu) {
         map.clear();
         System.out.println(yongHu);
+        System.out.println(String.valueOf(yongHu.getUid()).length());
 
         try {
             yongHuService.updateUser(yongHu);

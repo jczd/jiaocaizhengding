@@ -19,7 +19,7 @@ public interface YongHuDao {
     @Insert("insert into yonghu (name,password,number,shenfen,xueyuan) values (#{name},#{password},#{number},#{shenfen},#{xueyuan})")
     public void saveYongHu(YongHu yongHu);
 
-    @Delete("delete from yonghu where uid = #{uid} ")
+    @Delete("delete from yonghu where uid = #{uid}")
     int deleteUser(Integer uid);
 
     @Select("select * from yonghu where name=#{name} and password=#{password}")
@@ -28,6 +28,6 @@ public interface YongHuDao {
     @Select("select * from yonghu order by uid desc")
     public List<YongHu> findAll();
 
-    @Update("update yonghu set name=${name},password=#{password},number=${number},shenfen=${shenfen},xueyuan=${xueyuan} where uid=${uid}")
-    void updateOne(YongHu yongHu);
+    @Update("update yonghu set name='${name}',password='${password}',number='${number}',shenfen='${shenfen}',xueyuan='${xueyuan}' where uid=${uid};")
+    public void updateOne(YongHu yongHu);
 }

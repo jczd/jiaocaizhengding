@@ -45,12 +45,12 @@ public class storeController {
     }
 
     @RequestMapping("/book/deletebook")
-    public Map<String, Object> deletebook1(Book book) {
+    public Map<String, Object> deletebook1(Integer bid) {
         map.clear();
-        System.out.println(book);
+        System.out.println(bid);
 
         try {
-            bookService.deleteBook(book.getName());
+            bookService.deleteBook(bid);
             map.put("code", 1);
         } catch (Exception e) {
             map.put("code", 2);

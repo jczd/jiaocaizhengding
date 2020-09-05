@@ -20,6 +20,7 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
 
+
 # mapper
 mapper:
   mappers: tk.mybatis.mapper.common.Mapper
@@ -39,6 +40,4 @@ debug: false
 logging:
   level:
     root: info
-    com:
-      sunforits:
-        dao: debug
+
