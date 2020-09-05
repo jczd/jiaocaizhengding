@@ -21,9 +21,9 @@ public interface BookDao  {
     @Delete("delete from book where bid = #{bid} ")
     int deleteBook(Integer bid);
 
-    @Select("select * from book where name = #{name}")
-    public Book findOne(String name);
+    @Select("select * from book where bid = #{bid}")
+    public Book findOne(String bid);
 
-    @Select("select * from book order by bid desc ")
+    @Select("select * from book order by bid desc;")
     public List<Book> findAll();
 }
