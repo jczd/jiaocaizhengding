@@ -9,9 +9,9 @@ import java.util.List;
  */
 public interface schoolService {
 
-    public List<dingdan> bookFind(String name);
+    public List<dingdan> bookFind(String bid);
 
-    public List<dingdan> teacherFind(String name);
+    public List<dingdan> teacherFind(String uid);
 
     public List<dingdan> allfind();
 }

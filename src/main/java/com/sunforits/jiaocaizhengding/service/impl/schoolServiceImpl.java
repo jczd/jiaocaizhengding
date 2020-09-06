@@ -19,14 +19,14 @@ public class schoolServiceImpl implements schoolService {
     private SchoolDao schoolDao;
 
     @Override
-    public List<dingdan> bookFind(String name) {
-        List<dingdan> bookfind = schoolDao.bookfind(String name);
+    public List<dingdan> bookFind(String bid) {
+        List<dingdan> bookfind = schoolDao.bookfind(String bid);
         return bookfind;
     }
 
     @Override
-    public List<dingdan> teacherFind(String name) {
-        List<dingdan> teacherfind = schoolDao.teacherfind(String name);
+    public List<dingdan> teacherFind(String uid) {
+        List<dingdan> teacherfind = schoolDao.teacherfind(String uid);
         return teacherfind;
     }
 

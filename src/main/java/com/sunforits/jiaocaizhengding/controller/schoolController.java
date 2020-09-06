@@ -55,12 +55,12 @@ public class schoolController {
 
     //学校根据老师名字，书籍名字，查看总表
     @RequestMapping("/teacherfind")
-    public Map<String, Object> teacherfind(String name) {
+    public Map<String, Object> teacherfind(String uid) {
         map.clear();
 
         List<dingdan> teacherChaXuns = null;
         try {
-            teacherChaXuns = schoolService.teacherFind(name);
+            teacherChaXuns = schoolService.teacherFind(uid);
             map.put("code", 1);
             map.put("find", teacherChaXuns);
         } catch (Exception e) {
@@ -71,12 +71,12 @@ public class schoolController {
     }
 
     @RequestMapping("/bookfind")
-    public Map<String, Object> bookfind(String name) {
+    public Map<String, Object> bookfind(String bid) {
         map.clear();
 
         List<dingdan> bookChaXuns = null;
         try {
-            bookChaXuns = schoolService.bookFind(name);
+            bookChaXuns = schoolService.bookFind(bid);
             map.put("code", 1);
             map.put("booklist", bookChaXuns);
         } catch (Exception e) {

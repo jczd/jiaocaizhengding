@@ -20,14 +20,14 @@ public interface SchoolDao {
     //根据书名查询
     @Select("SELECT book.`name`,book.`chubanshe`,book.`zuozhe` ,allbook.`shuliang`,yonghu.`name`,yonghu.`shenfen`,yonghu.`number`,yonghu.`bumen`,allbook.`bid`,allbook.`uid`  FROM allbook \n" +
             "LEFT OUTER JOIN book ON allbook.`bid`=book.`bid` \n" +
-            "LEFT OUTER JOIN yonghu ON allbook.`uid`=yonghu.`uid` WHERE book.`name`='#{name}' ")
-    public List<dingdan> bookfind(String name);
+            "LEFT OUTER JOIN yonghu ON allbook.`uid`=yonghu.`uid` WHERE book.`bid`='#{bid}' ")
+    public List<dingdan> bookfind(String bid);
 
     //根据老师查询
     @Select("SELECT yonghu.`name`,yonghu.`shenfen`,yonghu.`number`,yonghu.`bumen`,allbook.`bid`,allbook.`uid` ,book.`name`,book.`chubanshe`,book.`zuozhe` ,allbook.`shuliang` FROM allbook \n" +
             "LEFT OUTER JOIN yonghu ON allbook.`uid`=yonghu.`uid` \n" +
-            "LEFT OUTER JOIN book ON allbook.`bid`=book.`bid` where yonghu.'name'='#{name}' ")
-    public List<dingdan> teacherfind(String name);
+            "LEFT OUTER JOIN book ON allbook.`bid`=book.`bid` where yonghu.'uid'='#{uid}' ")
+    public List<dingdan> teacherfind(String uid);
 
     //查询所有
     @Select("SELECT yonghu.`name`,yonghu.`shenfen`,yonghu.`number`,yonghu.`bumen`,allbook.`bid`,allbook.`uid` ,book.`name`,book.`chubanshe`,book.`zuozhe` ,allbook.`shuliang` FROM allbook \n" +
