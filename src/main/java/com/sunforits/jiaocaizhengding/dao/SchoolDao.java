@@ -16,19 +16,19 @@ public interface SchoolDao {
 
 
     //根据书名查询
-    @Select("SELECT book.`name`,book.`chubanshe`,book.`zuozhe` ,allbook.`shuliang`,allbook.`shuliang`,yonghu.`username`,yonghu.`shenfen`,yonghu.`number`,yonghu.`bumen`,allbook.`bid`,allbook.`uid`  FROM allbook \n" +
+    @Select("SELECT book.`name`,book.`chubanshe`,book.`zuozhe` ,allbook.`shuliang`,book.`money`,yonghu.`username`,yonghu.`shenfen`,yonghu.`number`,yonghu.`bumen`,allbook.`bid`,allbook.`uid`  FROM allbook \n" +
             "LEFT OUTER JOIN book ON allbook.`bid`=book.`bid` \n" +
             "LEFT OUTER JOIN yonghu ON allbook.`uid`=yonghu.`uid` WHERE book.`bid`='#{bid}' ")
     public List<dingdan> bookfind(String bid);
 
     //根据老师查询
-    @Select("SELECT yonghu.`username`,yonghu.`shenfen`,yonghu.`number`,yonghu.`bumen`,allbook.`bid`,allbook.`shuliang`,allbook.`uid` ,book.`name`,book.`chubanshe`,book.`zuozhe` ,allbook.`shuliang` FROM allbook \n" +
+    @Select("SELECT yonghu.`username`,yonghu.`shenfen`,yonghu.`number`,yonghu.`bumen`,allbook.`bid`,book.`money`,allbook.`uid` ,book.`name`,book.`chubanshe`,book.`zuozhe` ,allbook.`shuliang` FROM allbook \n" +
             "LEFT OUTER JOIN yonghu ON allbook.`uid`=yonghu.`uid` \n" +
             "LEFT OUTER JOIN book ON allbook.`bid`=book.`bid` where yonghu.'uid'='#{uid}' ")
     public List<dingdan> teacherfind(String uid);
 
     //查询所有
-    @Select("SELECT yonghu.`username`,yonghu.`shenfen`,yonghu.`number`,yonghu.`bumen`,allbook.`bid`,allbook.`uid` ,allbook.`shuliang`,book.`name`,book.`chubanshe`,book.`zuozhe` ,allbook.`shuliang` FROM allbook \n" +
+    @Select("SELECT yonghu.`username`,yonghu.`shenfen`,yonghu.`number`,yonghu.`bumen`,allbook.`bid`,allbook.`uid` ,allbook.`shuliang`,book.`name`,book.`chubanshe`,book.`zuozhe` ,book.`money` FROM allbook \n" +
             "LEFT OUTER JOIN yonghu ON allbook.`uid`=yonghu.`uid` \n" +
             "LEFT OUTER JOIN book ON allbook.`bid`=book.`bid` ")
     public List<dingdan> allfind();
