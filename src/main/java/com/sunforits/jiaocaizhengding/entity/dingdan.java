@@ -12,7 +12,7 @@ public class dingdan {
     private String bid;
     private String uid;
 
-    private String book;
+    private String name;
     private String chubanshe;
     private String zuozhe;
     private Integer shuliang;
