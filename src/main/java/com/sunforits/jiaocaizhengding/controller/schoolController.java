@@ -30,8 +30,6 @@ public class schoolController {
     @Autowired
     private BookService bookService;
     @Autowired
-    private YongHuService yongHuService;
-    @Autowired
     private schoolService schoolService;
 
     Map<String, Object> map = new HashMap<>();
@@ -57,12 +55,12 @@ public class schoolController {
 
     //学校根据老师名字，书籍名字，查看总表
     @RequestMapping("/teacherfind")
-    public Map<String, Object> teacherfind() {
+    public Map<String, Object> teacherfind(String name) {
         map.clear();
 
-        List<YongHu> teacherChaXuns = null;
+        List<dingdan> teacherChaXuns = null;
         try {
-            teacherChaXuns = schoolService.teacherFind();
+            teacherChaXuns = schoolService.teacherFind(name);
             map.put("code", 1);
             map.put("find", teacherChaXuns);
         } catch (Exception e) {
@@ -73,12 +71,29 @@ public class schoolController {
     }
 
     @RequestMapping("/bookfind")
-    public Map<String, Object> bookfind() {
+    public Map<String, Object> bookfind(String name) {
         map.clear();
 
-        List<Book> bookChaXuns = null;
+        List<dingdan> bookChaXuns = null;
         try {
-            bookChaXuns = schoolService.bookFind();
+            bookChaXuns = schoolService.bookFind(name);
+            map.put("code", 1);
+            map.put("booklist", bookChaXuns);
+        } catch (Exception e) {
+            map.put("code", 2);
+        }
+        System.out.println(map);
+
+        return map;
+    }
+
+    @RequestMapping("/allfind")
+    public Map<String, Object> allfind() {
+        map.clear();
+
+        List<dingdan> bookChaXuns = null;
+        try {
+            bookChaXuns = schoolService.allfind();
             map.put("code", 1);
             map.put("booklist", bookChaXuns);
         } catch (Exception e) {

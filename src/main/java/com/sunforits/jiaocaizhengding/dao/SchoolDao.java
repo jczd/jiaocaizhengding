@@ -2,6 +2,7 @@ package com.sunforits.jiaocaizhengding.dao;
 
 import com.sunforits.jiaocaizhengding.entity.Book;
 import com.sunforits.jiaocaizhengding.entity.YongHu;
+import com.sunforits.jiaocaizhengding.entity.dingdan;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -17,11 +18,21 @@ public interface SchoolDao {
 
 
     //根据书名查询
-    @Select("SELECT book.`name`,book.`chubanshe`,book.`zuozhe`, allbook.`shuliang`,allbook.`teacher` FROM book LEFT OUTER JOIN allbook ON book.`name`= allbook.`book` ")
-    public List<Book> bookfind();
+    @Select("SELECT book.`name`,book.`chubanshe`,book.`zuozhe` ,allbook.`shuliang`,yonghu.`name`,yonghu.`shenfen`,yonghu.`number`,yonghu.`bumen`,allbook.`bid`,allbook.`uid`  FROM allbook \n" +
+            "LEFT OUTER JOIN book ON allbook.`bid`=book.`bid` \n" +
+            "LEFT OUTER JOIN yonghu ON allbook.`uid`=yonghu.`uid` WHERE book.`name`='#{name}' ")
+    public List<dingdan> bookfind(String name);
 
     //根据老师查询
-    @Select("SELECT teacher.`name`,teacher.`xueyuan`, allbook.`shuliang`,allbook.`book` FROM teacher LEFT OUTER JOIN allbook ON teacher.`name`=allbook.`teacher`  ")
-    public List<YongHu> teacherfind();
+    @Select("SELECT yonghu.`name`,yonghu.`shenfen`,yonghu.`number`,yonghu.`bumen`,allbook.`bid`,allbook.`uid` ,book.`name`,book.`chubanshe`,book.`zuozhe` ,allbook.`shuliang` FROM allbook \n" +
+            "LEFT OUTER JOIN yonghu ON allbook.`uid`=yonghu.`uid` \n" +
+            "LEFT OUTER JOIN book ON allbook.`bid`=book.`bid` where yonghu.'name'='#{name}' ")
+    public List<dingdan> teacherfind(String name);
+
+    //查询所有
+    @Select("SELECT yonghu.`name`,yonghu.`shenfen`,yonghu.`number`,yonghu.`bumen`,allbook.`bid`,allbook.`uid` ,book.`name`,book.`chubanshe`,book.`zuozhe` ,allbook.`shuliang` FROM allbook \n" +
+            "LEFT OUTER JOIN yonghu ON allbook.`uid`=yonghu.`uid` \n" +
+            "LEFT OUTER JOIN book ON allbook.`bid`=book.`bid` ")
+    public List<dingdan> allfind();
 
 }

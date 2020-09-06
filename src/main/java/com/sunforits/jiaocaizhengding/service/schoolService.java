@@ -1,7 +1,6 @@
 package com.sunforits.jiaocaizhengding.service;
 
-import com.sunforits.jiaocaizhengding.entity.Book;
-import com.sunforits.jiaocaizhengding.entity.YongHu;
+import com.sunforits.jiaocaizhengding.entity.dingdan;
 
 import java.util.List;
 
@@ -10,7 +9,9 @@ import java.util.List;
  */
 public interface schoolService {
 
-    public List<Book> bookFind();
+    public List<dingdan> bookFind(String name);
 
-    public List<YongHu> teacherFind();
+    public List<dingdan> teacherFind(String name);
+
+    public List<dingdan> allfind();
 }
