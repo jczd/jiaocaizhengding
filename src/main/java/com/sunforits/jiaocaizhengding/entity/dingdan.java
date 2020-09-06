@@ -17,6 +17,7 @@ public class dingdan {
     private String zuozhe;
     private Integer shuliang;
 
+    private Integer money;
     private String username;
     private String shefen;
     private String number;
