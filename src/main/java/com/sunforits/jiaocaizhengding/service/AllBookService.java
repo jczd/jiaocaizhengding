@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface AllBookService {
 
-     List<AllBook> allFindOne(String name);
+     List<AllBook> allFindOne(String uid);
 
      List<AllBook> allFindAll();
 

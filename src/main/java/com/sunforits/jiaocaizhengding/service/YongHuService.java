@@ -13,7 +13,7 @@ public interface YongHuService {
 
     void saveYongHu(YongHu yongHu);
 
-    void deleteUser(String id);
+    void deleteUser(String uid);
 
     YongHu findByNP(YongHu yongHu);
 

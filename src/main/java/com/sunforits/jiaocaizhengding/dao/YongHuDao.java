@@ -17,18 +17,18 @@ public interface YongHuDao {
     @Select("select * from yonghu where number = '${number}';")
     public YongHu DengLu(String number);
 
-    @Insert("insert into yonghu (uid,name,password,number,shenfen,bumen) values ('${uid}','${name}','${password}',${number},'${shenfen}','${bumen}')")
+    @Insert("insert into yonghu (uid,username,password,number,shenfen,bumen) values ('${uid}','${username}','${password}',${number},'${shenfen}','${bumen}')")
     public void saveYongHu(YongHu yongHu);
 
     @Delete("delete from yonghu where uid = '${uid}'")
     int deleteUser(String uid);
 
-    @Select("select * from yonghu where name=${name} and password=${password}")
+    @Select("select * from yonghu where username=${username} and password=${password}")
     public YongHu findByNP(YongHu yongHu);
 
     @Select("select * from yonghu order by uid desc")
     public List<YongHu> findAll();
 
-    @Update("update yonghu set name='${name}',password='${password}',number='${number}',shenfen='${shenfen}',bumen='${bumen}' where uid='${uid}' ")
+    @Update("update yonghu set username='${username}',password='${password}',number='${number}',shenfen='${shenfen}',bumen='${bumen}' where uid='${uid}' ")
     public void updateOne(YongHu yongHu);
 }

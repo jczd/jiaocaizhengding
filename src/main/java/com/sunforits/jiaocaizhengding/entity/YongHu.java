@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Data
 public class YongHu implements Serializable {
     private String uid;
-    private String name;
+    private String username;
     private String password;
     private String shenfen;
     private String number;

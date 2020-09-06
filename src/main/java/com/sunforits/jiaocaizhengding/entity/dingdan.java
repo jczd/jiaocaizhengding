@@ -11,11 +11,13 @@ import lombok.Data;
 public class dingdan {
     private String bid;
     private String uid;
+
     private String book;
     private String chubanshe;
     private String zuozhe;
     private Integer shuliang;
-    private String name;
+
+    private String username;
     private String shefen;
     private String number;
     private String bumen;
