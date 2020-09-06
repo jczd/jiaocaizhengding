@@ -14,7 +14,7 @@ import java.util.List;
 public interface AllBookDao {
 
     //添加书籍
-    @Insert("insert into allbook (uid,bid,shuliang,state,start) values ('#{uid}','#{bid}','#{shuliang}','${state}','#{start}')")
+    @Insert("insert into allbook (uid,bid,shuliang,state,start) values ('${uid}','${bid}','${shuliang}','${state}','${start}')")
     public void allSaveBook(AllBook allBook);
 
     //删除书籍
