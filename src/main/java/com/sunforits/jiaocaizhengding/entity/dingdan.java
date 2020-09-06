@@ -9,5 +9,14 @@ import lombok.Data;
  */
 @Data
 public class dingdan {
-    AllBook[] allBooks;
+    private String bid;
+    private String uid;
+    private String book;
+    private String chubanshe;
+    private String zuozhe;
+    private Integer shuliang;
+    private String name;
+    private String shefen;
+    private String number;
+    private String bumen;
 }
