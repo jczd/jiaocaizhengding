@@ -10,6 +10,7 @@ import com.sunforits.jiaocaizhengding.entity.AllBook;
 import com.sunforits.jiaocaizhengding.service.AllBookService;
 import com.sunforits.jiaocaizhengding.service.BookService;
 
+import com.sunforits.jiaocaizhengding.utils.map.MapChange;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -60,7 +61,7 @@ public class teacherController {
         map.clear();
         System.out.println(str);
 
-        List<AllBook> allBooks = mapToList(str, AllBook.class, "dingdan");
+        List<AllBook> allBooks = new MapChange().mapToList(str, AllBook.class, "dingdan");
         System.out.println(allBooks);
 
         try {
@@ -71,7 +72,6 @@ public class teacherController {
         } catch (Exception e) {
             map.put("code", 2);
         }
-
 
         return map;
     }
@@ -132,42 +132,5 @@ public class teacherController {
         return map;
     }
 
-    public static JSONObject mapToJson(Map<String, Object> map) {
-        String data = JSON.toJSONString(map);
-        return JSON.parseObject(data);
-    }
-
-    /**
-     * map中取类对象
-     *
-     * @param map
-     * @param clazz
-     * @param key
-     * @param <T>
-     * @return
-     */
-    public static <T> T mapToObject(Map<String, Object> map, Class<T> clazz, String key) {
-        T t = null;
-        JSONObject jsonObject = mapToJson(map);
-        JSONObject object = jsonObject.getJSONObject(key);
-        t = object.toJavaObject(clazz);
-        return t;
-    }
-
-    /**
-     * map中取list
-     *
-     * @param map
-     * @param clazz
-     * @param key
-     * @return
-     */
-    public List<AllBook> mapToList(Map<String, Object> map, Class<AllBook> clazz, String key) {
-        List<AllBook> t = null;
-        JSONObject jsonObject = mapToJson(map);
-        JSONArray array = jsonObject.getJSONArray(key);
-        t = array.toJavaList(clazz);
-        return t;
-    }
 
 }

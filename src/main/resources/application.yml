@@ -1,22 +1,32 @@
 server:
   tomcat:
     uri-encoding: UTF-8
-  port: 8080
+  port: 80
 
 
 spring:
-  profiles:
-    active: dev
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://122.51.214.148:3306/material?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone = GMT
+    username: jczd
+    password: 'jczd'
 
-  mvc:
-  #    static-path-pattern: /static/**
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 25
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: ExpendHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+
   resources:
     static-locations: classpath:/static
 
 #mybatis配置
 mybatis:
-  mapper-locations: classpath:mapper//*.xml
-  type-aliases-package: com.jiaocaizhengding.entity
+  type-aliases-package: com.sunforits.jiaocaizhengding.entity
   configuration:
     map-underscore-to-camel-case: true
 
@@ -26,13 +36,6 @@ mapper:
   mappers: tk.mybatis.mapper.common.Mapper
   not-empty: false
   identity: MYSQL
-
-# pageHelper 分页插件
-pagehelper:
-  helperDialect: mysql
-  reasonable: true
-  supportMethodsArguments: true
-  params: count=countSql
 
 debug: false
 
